@@ -1,0 +1,104 @@
+.navbar {
+    background-color: #202020;
+    display: flex;
+    height: 62px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-navbar{
+     background-color: #202020;
+    display: flex;
+    height: 62px;
+    justify-content: start;
+    align-items: center;
+}
+
+.right-navbar{
+    position: relative;
+    display: flex;
+    align-items: right;
+    justify-content: space-between;
+    padding: 10px;
+
+}
+
+.menu-bars{
+    margin-left: 2rem;
+    font-size: 20px;
+    background: none;
+    color: white;
+}
+
+.nav-menu{
+    background-color: #303030;
+    width: 250px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    transition: 850ms;
+    left: -100%;
+}
+
+.nav-menu.active{
+    margin-top: 63px;
+    left: 0;
+    transition: 350ms;
+}
+
+.nav-text{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    // padding: 8px 0px 8px 16px;
+    height: 60px;
+}
+
+.nav-text a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    width: 95%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    border-radius: 4px;
+}
+
+.nav-text a:hover{
+    background-color: #222222;   
+}
+
+.nav-menu-items{
+    width: 100%;
+}
+
+.navbar-toggle{
+    background-color: #060b26;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+span{
+    margin-left: 16px;
+}
+
+.homeDemo{
+    right: 10;
+    margin-right: 10px;
+    float: right;
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 20px;
+    border: 1px solid blue;
+    padding: 3px;
+    color:blue;
+    border-radius: 2px;
+    background-color:  #191919;
+}

@@ -1,0 +1,22 @@
+
+.home{
+    justify-content: space-between;
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 20px;
+    border: 1px solid blue;
+    padding: 3px;
+    color:blue;
+    border-radius: 2px;
+}
+
+.humanIcon{
+    height: 18px;
+}
+
+.logo > img{
+    margin-left: 25px;
+    width: 80px;
+    height: 52px;
+    display:flex;
+}

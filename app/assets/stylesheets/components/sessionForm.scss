@@ -1,0 +1,125 @@
+.theform {
+    color: black;
+    background-color: white;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    width: 350px;
+    height: 445px;
+    padding: 48px 40px 36px;
+}
+
+.theform > div {
+    text-align: center;
+
+}
+.therform > label {
+    position: absolute;
+    top: -1px;
+    left: 20px;
+}
+
+
+body{
+    // background-color: white;
+    // height: 100vh;
+}
+
+div{
+    display: block;
+    // margin-top: 500px;
+    text-align: center;
+}
+
+form{
+     display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    margin-top: 100px;
+}
+
+img{
+    width: 80px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title {
+    margin-left: auto;
+    margin-right: auto; 
+    text-align: center;
+    font-size: 25px;
+}
+
+
+// @media screen and (max-width: 600px) {
+//   .col-25, .col-75, input[type=submit] {
+//     width: 100%;
+//     margin-top: 0;
+//   }
+// }
+
+.submitBttn, .bottom {
+    margin-top: 50px;
+}
+
+.submitBttn {
+    margin: 0 auto;
+    margin-top: 30px;
+    outline: none;
+    display: flex;
+    justify-content: space-around;
+    float: right;
+    width: 49px;
+    height: 20px;
+    border: 1px solid #dadcdf;
+    border-radius: 5px;
+    background-color: #2174E7 ;
+    color: white;
+}
+
+.submitBttn:hover{
+    background-color: #1F65C9;
+}
+
+span{
+    text-decoration: none;
+}
+
+input:focus {
+    border: 2px solid #055fd4;
+    border-radius: 4px;
+    width: 340px;
+}
+
+input {
+    outline: none;
+    border: 1px solid #d9dcdf;
+    border-radius: 4px;
+    padding: 13px 15px 13px 15px;
+    width: 340px;
+    margin: 0 0 4px 0;
+ }
+
+ .email > label {
+     display: inline-block;
+     top: -44px;
+     left: 8px;
+     position: relative;
+     float: none;
+     transition: all 0.3s ease;
+     background-color: #ffffff;
+     padding: 2px 8px;
+     cursor: auto;
+     color: #7f868a;
+ }
+
+ .email > input:focus + label, input:valid + label{
+     top: -71px;
+     left: 8px;
+     font-size: 12px;
+ }
+
+.txt {
+    text-align: center;
+}

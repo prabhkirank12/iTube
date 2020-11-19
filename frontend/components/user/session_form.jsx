@@ -37,24 +37,55 @@ class SessionForm extends React.Component {
     }
 
     render() {
+        const title = (this.props.formType === 'login') ? 'Sign in' : 'Create your Google Account'
+        const fullSignup = (this.props.formType === 'signup') ? (
+                <>
+                    <label className="Name"> 
+                    <input type="text" value={this.state.first_name} onChange={this.update('first_name')} placeholder="First Name" />
+                    </label>
+                    <br />
+                    <br />
+                    <label className="Name"> 
+                        <input type="text" value={this.state.last_name} onChange={this.update('last_name')} placeholder="Last Name" />
+                    </label>
+                    <br />
+                    <br />
+                    
+                </>
+                    ) : null
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
-          <br />
-          Please {this.props.formType} or {this.props.navLink}
-            {this.renderErrors()}
-                <div>
+                <form className="theform" onSubmit={this.handleSubmit}>
                     <br />
-                    <label>Email:
-                        <input type="text" value={this.state.email} onChange={this.update('email')}/>
-                    </label>
+                    <img src={window.googleUrl} alt="Google"/>
                     <br />
-                    <label>Password:
-                            <input type="password" value={this.state.password} onChange={this.update('password')}/>
-                    </label>
+                    <p className="title">
+                        {title} 
+                    </p>
+                    <p className="txt">
+                        to continue to iTube
+                    </p>
                     <br />
-                    <input type="submit" value={this.props.formType} />
-                </div>
+                        {this.renderErrors()}
+                    <div>
+                        <br />
+                        { fullSignup }
+                        <label className="email" >
+                            <input type="text" value={this.state.email} onChange={this.update('email')} placeholder="Email"/>
+                        </label>
+                        <br />
+                        <br />
+                        <label className="password">
+                                <input type="password" value={this.state.password} onChange={this.update('password')} placeholder="Password"/>
+                        </label>
+                        <br />
+                        <p>
+                            <input className="submitBttn" type="submit" value={this.props.formType} />
+                        </p>
+                    </div>
+                    <span className="bottom">
+                        {this.props.navLink}
+                    </span>
                 </form>
             </div>
         );
