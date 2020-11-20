@@ -37,25 +37,21 @@ class SessionForm extends React.Component {
     }
 
     render() {
+        const photo = (this.props.formType === 'signup') ? <img src={window.signupUrl} />: null ;
         const title = (this.props.formType === 'login') ? 'Sign in' : 'Create your Google Account'
         const fullSignup = (this.props.formType === 'signup') ? (
                 <>
-                    <label className="Name"> 
-                    <input type="text" value={this.state.first_name} onChange={this.update('first_name')} placeholder="First Name" />
-                    </label>
+                    <input id="fname" type="text" value={this.state.first_name} onChange={this.update('first_name')}/>
+                    <label htmlFor="fname" className="Name"> First Name</label>
+                    <input id="lname" type="text" value={this.state.last_name} onChange={this.update('last_name')} />
+                    <label htmlFor="lname" className="Name"> Last Name</label>
                     <br />
-                    <br />
-                    <label className="Name"> 
-                        <input type="text" value={this.state.last_name} onChange={this.update('last_name')} placeholder="Last Name" />
-                    </label>
-                    <br />
-                    <br />
-                    
+                    <br /> 
                 </>
-                    ) : null
+                    ) : null;
         return (
-            <div>
-                <form className="theform" onSubmit={this.handleSubmit}>
+            <div className="form-div">
+                <form className={this.props.formType === 'login' ? "theform" : "signup-form"} onSubmit={this.handleSubmit}>
                     <br />
                     <img src={window.googleUrl} alt="Google"/>
                     <br />
@@ -67,21 +63,22 @@ class SessionForm extends React.Component {
                     </p>
                     <br />
                         {this.renderErrors()}
-                    <div>
+                    <div className={this.props.formType === 'login' ? "login-div" : "signup-div"} >
                         <br />
                         { fullSignup }
-                        <label className="email" >
-                            <input type="text" value={this.state.email} onChange={this.update('email')} placeholder="Email"/>
-                        </label>
+                        <input id="email" type="text" value={this.state.email} onChange={this.update('email')}/>
+                        <label htmlFor="email" className="email" >Email</label>
                         <br />
                         <br />
-                        <label className="password">
-                                <input type="password" value={this.state.password} onChange={this.update('password')} placeholder="Password"/>
-                        </label>
+                        <input id="password" type="password" value={this.state.password} onChange={this.update('password')}/>
+                        <label htmlFor="password" className={this.props.formType === 'login' ? "password" : 'signup-password'}>Password</label>
                         <br />
                         <p>
-                            <input className="submitBttn" type="submit" value={this.props.formType} />
+                            <button className="submitBttn">{this.props.formType}</button> 
                         </p>
+                        <div className="signup-photo">
+                            {photo}
+                        </div>
                     </div>
                     <span className="bottom">
                         {this.props.navLink}

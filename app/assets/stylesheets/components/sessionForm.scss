@@ -4,8 +4,27 @@
     border: 1px solid lightgrey;
     border-radius: 10px;
     width: 350px;
-    height: 445px;
+    // height: 445px;
     padding: 48px 40px 36px;
+    // position
+}
+
+.signup-form {
+    color: black;
+    background-color: white;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    width: 700px;
+    padding: 48px 40px 36px;
+    text-align: left;
+}
+
+.signup-div {
+    text-align: left;
+}
+
+.body{
+    height: 100%;
 }
 
 .theform > div {
@@ -18,10 +37,18 @@
     left: 20px;
 }
 
+.form-div{
+   background-color: white; 
+   height: 100%;
+}
+
 
 body{
-    // background-color: white;
-    // height: 100vh;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: fixed;
 }
 
 div{
@@ -52,31 +79,28 @@ img{
 }
 
 
-// @media screen and (max-width: 600px) {
-//   .col-25, .col-75, input[type=submit] {
-//     width: 100%;
-//     margin-top: 0;
-//   }
-// }
-
 .submitBttn, .bottom {
     margin-top: 50px;
 }
 
-.submitBttn {
+.submitBttn{
     margin: 0 auto;
     margin-top: 30px;
     outline: none;
     display: flex;
     justify-content: space-around;
     float: right;
-    width: 49px;
-    height: 20px;
+    width: 52px;
+    height: 35px;
     border: 1px solid #dadcdf;
     border-radius: 5px;
     background-color: #2174E7 ;
     color: white;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
+
 
 .submitBttn:hover{
     background-color: #1F65C9;
@@ -101,8 +125,16 @@ input {
     margin: 0 0 4px 0;
  }
 
- .email > label {
-     display: inline-block;
+ .txt {
+    text-align: center;
+}
+
+ .email, .password, .Name, label, input {
+     transition: all 0.2s;
+ }
+
+ label{
+      display: inline-block;
      top: -44px;
      left: 8px;
      position: relative;
@@ -112,14 +144,46 @@ input {
      padding: 2px 8px;
      cursor: auto;
      color: #7f868a;
- }
+}
 
- .email > input:focus + label, input:valid + label{
-     top: -71px;
-     left: 8px;
-     font-size: 12px;
- }
+input:focus + label {
+    top: -62px;
+    left: -120px;
+    font-size: 12px;
+    color: rgb(46, 129, 214);
 
-.txt {
-    text-align: center;
+}
+
+.signup-photo > img{
+    float: right;
+    justify-content: end;
+    margin: 0;
+    margin-right: -113px;
+    margin-top: -335px;
+    width: 300px;
+    user-select: none;
+    
+}
+
+#fname {
+    outline: none;
+    border: 1px solid #d9dcdf;
+    border-radius: 4px;
+    padding: 13px 15px 13px 15px;
+    width: 180px;
+    margin: 0 0 4px 0;
+}
+
+#lname {
+    outline: none;
+    border: 1px solid #d9dcdf;
+    border-radius: 4px;
+    padding: 13px 15px 13px 15px;
+    width: 180px;
+    margin: 0 0 4px 0;
+    margin-left: -60px;
+}
+
+.signup-password{
+    width: 20px;
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import * as FaIcons from "react-icons/fa";
 import * as BsIcons from "react-icons/bs";
+import * as IoIcons from "react-icons/io"
 import { SidebarData } from "../side_bar/side_bar_data"
 
 class NavBar extends React.Component{
@@ -12,6 +13,7 @@ class NavBar extends React.Component{
         };
         this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
         this.showSidebar = this.showSidebar.bind(this);
+        this.moreIcon = this.moreIcon.bind(this);
     }
 
     handleDemoSubmit(){
@@ -21,6 +23,18 @@ class NavBar extends React.Component{
         };
         this.props.login(user)
     };
+
+    componentDidMount(){
+        this.props.currentUser
+    }
+
+    moreIcon() {
+        if(this.props.currentUser){
+            return <FaIcons.FaBell />
+        }else{
+            return <BsIcons.BsThreeDotsVertical />
+        }
+    }
 
     showSidebar(){
         this.setState({sidebar: !this.state.sidebar})
@@ -36,6 +50,8 @@ class NavBar extends React.Component{
                         <Link className="logo" to="/"><img src={window.logoUrl} alt="logo" /></Link>
                     </div>
                     <div className="right-navbar">
+                         <button className="other-icon"><IoIcons.IoMdApps /></button>
+                        <button className="other-icon">{this.moreIcon()}</button>
                         <Link className="home" to="/login"> <BsIcons.BsFillPersonFill className="humanIcon" /> Sign in</Link>
                         <button className="home" onClick={this.handleDemoSubmit}>Demo User</button> 
                     </div>

@@ -4,6 +4,7 @@ import { Dropdown } from 'react-bootstrap';
 // import DropdownItem from 'react-bootstrap/esm/DropdownItem';
 import Sidebar from '../side_bar/side_bar'
 import NavBar from '../nav_bar/nav_bar_container'
+import FixedSideBar from '../fixed_side_bar/fixed_sidebar_container';
 // import { SidebarData } from '../side_bar/side_bar_data'
 // import * as AiIcons from "react-icons/ai"
 
@@ -16,6 +17,7 @@ class Home extends React.Component {
         const sessionLinks = () => (
             <nav>
                 <NavBar />
+                <FixedSideBar />
             </nav>
         );
         const personalHome = () => {

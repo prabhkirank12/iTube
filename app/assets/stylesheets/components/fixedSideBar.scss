@@ -1,0 +1,32 @@
+div.fixed-side-bar{
+    float: left;
+    // margin-top: 5px;
+    background-color: #303030;
+    height: 100vh;
+}
+
+.new-icons {
+    color: white;
+    text-decoration: none;
+    background-color: #303030;
+    width: 70px;
+    justify-content: space-around;
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.side-icons{
+    font-size: 20px;
+}
+
+.new-icons:hover, .side-icons:hover{
+     background-color: #222222;   
+}
+
+#ptag {
+    font-size: 10px;
+}
+
+#home-icon{
+    margin-top: 20px;
+}
