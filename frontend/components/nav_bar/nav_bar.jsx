@@ -95,6 +95,9 @@ class NavBar extends React.Component{
     }
     
     render (){
+        const sideBarSignin = (!this.props.currentUser ? 
+                    <Link className="home2" to="/login"> <BsIcons.BsFillPersonFill className="humanIcon" /> Sign in</Link>
+                    : null )
 
          return (
             <>
@@ -128,6 +131,8 @@ class NavBar extends React.Component{
                                 )
                             })
                         }
+                        <hr />
+                        {sideBarSignin}
                     </ul>
                 </nav>
             </>
