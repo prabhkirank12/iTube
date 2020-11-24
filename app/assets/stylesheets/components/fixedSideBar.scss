@@ -1,8 +1,12 @@
 div.fixed-side-bar{
     float: left;
-    // margin-top: 5px;
     background-color: #303030;
     height: 100vh;
+    overflow-x: hidden;
+    z-index: 1;
+    position: fixed;
+    top: 42px;
+    flex: 0.2;
 }
 
 .new-icons {
@@ -12,7 +16,9 @@ div.fixed-side-bar{
     width: 70px;
     justify-content: space-around;
     display: flex;
-    margin-bottom: 40px;
+    margin-bottom: 4px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .side-icons{
