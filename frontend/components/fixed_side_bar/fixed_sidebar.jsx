@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import * as FaIcons from "react-icons/fa";
+import * as HiIcons from "react-icons/hi";
+import * as MdIcons from "react-icons/md";
 import * as AiIcons from "react-icons/ai";
 
 class FixedSideBar extends React.Component {
@@ -17,6 +18,18 @@ class FixedSideBar extends React.Component {
                     <button id="home-icon">
                         <AiIcons.AiOutlineHome className="side-icons" />
                         <p id="ptag" className="home-btn">Home</p>
+                    </button>
+                </a>
+                <a href="https://github.com/prabhkirank12" className="new-icons">
+                    <button>
+                        <HiIcons.HiOutlineFire className="side-icons" />
+                        <p id="ptag">Trending</p>
+                    </button>
+                </a>
+                <a href="https://github.com/prabhkirank12" className="new-icons">
+                    <button>
+                        <MdIcons.MdSubscriptions className="side-icons" />
+                        <p id="ptag">Trending</p>
                     </button>
                 </a>
                 <a href="https://github.com/prabhkirank12" className="new-icons">
