@@ -1,0 +1,79 @@
+.app-page{
+    display: flex;
+}
+.videos-div{
+    border: 2px solid white;
+    flex: 0.8;
+    margin: 100px;
+    width: 100vw;
+    margin-right: 100px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.video-content{
+    color: white;
+}
+
+.one-video{
+    margin: 5px;
+}
+
+// .modal-div{
+//     z-index: 100;
+//     height: 500px;
+//     width: 250px;
+//     background-color: lightskyblue;
+// }
+
+.modal-div {
+  background: white;
+  z-index: 10;
+  height: 500px;
+  width: 500px;
+  border-radius: 6px;
+}
+
+.form-header{
+    justify-content: start;
+}
+
+.upload-icon{
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 25px;
+}
+
+.upload-icon-input{
+    display: none;
+}
+.upload-file{
+    margin-top: 60px;
+}
+
+.select-bttn-input{
+    display: none;
+    background-color: transparent;
+}
+
+.select-label{
+    padding: 0;
+    background-color: transparent;
+}
+
+.select-bttn{
+    background-color: #085ED4;
+    color: white;
+    padding-top: 0;
+    margin-top: 65px;
+    box-sizing: border-box;
+    padding: 4px;
+}
+
+// .modal-child {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+// }
