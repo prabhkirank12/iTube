@@ -8,6 +8,11 @@ class User < ApplicationRecord
         primary_key: :id,
         foreign_key: :uploader_id,
         class_name: :Video
+
+    belongs_to :liked_item,
+        primary_key: :id,
+        foreign_key: :liker_id,
+        classname: :Like
     
     attr_reader :password
     after_initialize :ensure_session_token
