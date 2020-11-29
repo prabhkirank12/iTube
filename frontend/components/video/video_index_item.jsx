@@ -1,4 +1,5 @@
 import React from 'react'
+import { formatDate } from '../../util/format_date_util';
 
 function VideoIndexItem({video, history}) {
     return (
@@ -10,7 +11,7 @@ function VideoIndexItem({video, history}) {
                 <div className="video-title">
                     {video.title}
                 </div>
-                {video.created_at}
+                {formatDate(video.created_at)}
             </div>
         </div>
     )

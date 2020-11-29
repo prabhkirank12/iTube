@@ -1,9 +1,11 @@
-import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
+// import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 import {
     RECEIVE_VIDEO,
     RECEIVE_ALL_VIDEOS,
     REMOVE_VIDEO
 } from '../actions/video_actions';
+
+import { RECEIVE_LIKE } from '../actions/like_actions'
 
 
 const videosReducer = (state = {}, action) => {
@@ -18,6 +20,8 @@ const videosReducer = (state = {}, action) => {
             return action.videos;
         case REMOVE_VIDEO:
             delete newState[action.videoId];
+            return newState;
+        case RECEIVE_LIKE:
             return newState;
         default:
             return state;
