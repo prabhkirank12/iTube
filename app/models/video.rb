@@ -24,5 +24,4 @@ class Video < ApplicationRecord
         self.likes.where(liked_value: -1).select(:liker_id).map{|ele| ele.liker_id}  
     end
     
-
 end
