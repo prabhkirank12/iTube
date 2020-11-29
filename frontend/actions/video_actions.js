@@ -1,8 +1,19 @@
 import * as VideoUtil from "../util/video_api_util";
+import * as LikeUtil from "../util/like_api_util";
+import { BsAppIndicator } from "react-icons/bs";
+
+export const RECEIVE_LIKED_VIDEOS = "RECEIVE_LIKED_VIDEOS";
 export const RECEIVE_VIDEO = "RECEIVE_VIDEO";
 export const RECEIVE_ALL_VIDEOS = "RECEIVE_ALL_VIDEOS";
 export const REMOVE_VIDEO = "REMOVE_VIDEO";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
+
+const receiveLikedVideos = (videos) => {
+    return{
+        type: RECEIVE_LIKED_VIDEOS,
+        videos
+    }
+}
 
 const receiveVideo = (video) => {
     return{
@@ -56,3 +67,29 @@ export const uploadVideo = video => dispatch => (
     VideoUtil.createVideo(video)
         .then(video => dispatch(receiveVideo(video)), err => receiveErrors(err))
 )
+
+
+export const likeVideo = (videoId) => dispatch => {
+    LikeUtil.likeVideo(videoId)
+        .then(video => dispatch(receiveVideo(video)))
+}
+
+export const unlikeVideo = (videoId) => dispatch => {
+    LikeUtil.unlikeVideo(videoId)
+        .then(video => dispatch(receiveVideo(video)))
+}
+
+export const dislikeVideo = (videoId) => dispatch => {
+    LikeUtil.dislikeVideo(videoId)
+        .then(video => dispatch(receiveVideo(video)))
+}
+
+export const undislikeVideo = (videoId) => dispatch => {
+    LikeUtil.undislikeVideo(videoId)
+        .then(video => dispatch(receiveVideo(video)))
+}
+
+export const changeLikeVideo = (videoId) => dispatch => {
+    LikeUtil.changeLikeVideo(videoId)
+        .then(video => dispatch(receiveVideo(video)))
+}
