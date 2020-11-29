@@ -9,10 +9,10 @@ class User < ApplicationRecord
         foreign_key: :uploader_id,
         class_name: :Video
 
-    belongs_to :liked_item,
+    has_many :liked_items,
         primary_key: :id,
         foreign_key: :liker_id,
-        classname: :Like
+        class_name: :Like
     
     attr_reader :password
     after_initialize :ensure_session_token
