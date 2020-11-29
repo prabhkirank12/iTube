@@ -20,7 +20,6 @@ class Api::VideosController < ApplicationController
         else
             @videos = Video.all
         end
-        # @videos = Video.all.includes(:uploader)
         render :index
     end
 
@@ -49,7 +48,7 @@ class Api::VideosController < ApplicationController
     end
     
     def unlike 
-        @like = Like.new(liked_value: 1, liker_id: current_user.id, likeable_id: params[:video_id], likeable_type: "Video")
+        @like = Like.find_by(liked_value: 1, liker_id: current_user.id, likeable_id: params[:video_id], likeable_type: "Video")
         if @like.destroy
             redirect_to api_video_url(params[:video_id])
         else
@@ -68,7 +67,7 @@ class Api::VideosController < ApplicationController
 
 
     def undislike 
-        @like = Like.new(liked_value: -1, liker_id: current_user.id, likeable_id: params[:video_id], likeable_type: "Video")
+        @like = Like.find_by(liked_value: -1, liker_id: current_user.id, likeable_id: params[:video_id], likeable_type: "Video")
         if @like.destroy
             redirect_to api_video_url(params[:video_id])
         else
