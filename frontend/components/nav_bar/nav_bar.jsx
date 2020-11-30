@@ -67,7 +67,7 @@ class NavBar extends React.Component{
                             <Dropdown.Item className="dropdown-item">{this.props.currentUser.first_name}</Dropdown.Item>
                             <Dropdown.Item>{this.props.currentUser.last_name}</Dropdown.Item>
                             <br />
-                                <Dropdown.Item> {this.props.currentUser.email}</Dropdown.Item>
+                            <Dropdown.Item> {this.props.currentUser.email}</Dropdown.Item>
                             <br />
                             <Dropdown.Item onClick={this.props.logout}>Sign Out</Dropdown.Item>
                         </Dropdown.Menu>

@@ -136,7 +136,7 @@ input {
 
  label{
       display: inline-block;
-     top: -44px;
+     top: -15px;
      left: 8px;
      position: relative;
      float: none;
@@ -181,8 +181,7 @@ input:focus + label {
     border-radius: 4px;
     padding: 13px 15px 13px 15px;
     width: 180px;
-    margin: 0 0 4px 0;
-    margin-left: -60px;
+    margin: 0 0 4px 0
 }
 
 .signup-password{

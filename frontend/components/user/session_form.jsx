@@ -41,10 +41,10 @@ class SessionForm extends React.Component {
         const title = (this.props.formType === 'login') ? 'Sign in' : 'Create your Google Account'
         const fullSignup = (this.props.formType === 'signup') ? (
                 <>
-                    <input id="fname" type="text" value={this.state.first_name} onChange={this.update('first_name')}/>
-                    <label htmlFor="fname" className="Name"> First Name</label>
-                    <input id="lname" type="text" value={this.state.last_name} onChange={this.update('last_name')} />
-                    <label htmlFor="lname" className="Name"> Last Name</label>
+                    {/* <label htmlFor="fname" className="Name"> First Name</label> */}
+                    <input id="fname" type="text" value={this.state.first_name} onChange={this.update('first_name')} placeholder="First Name"/>
+                    {/* <label htmlFor="lname" className="Name"> Last Name</label> */}
+                    <input id="lname" type="text" value={this.state.last_name} onChange={this.update('last_name')}  placeholder="Last Name"/>
                     <br />
                     <br /> 
                 </>
@@ -66,12 +66,12 @@ class SessionForm extends React.Component {
                     <div className={this.props.formType === 'login' ? "login-div" : "signup-div"} >
                         <br />
                         { fullSignup }
-                        <input id="email" type="text" value={this.state.email} onChange={this.update('email')}/>
-                        <label htmlFor="email" className="email" >Email</label>
+                        <input id="email" type="text" value={this.state.email} onChange={this.update('email')} placeholder="Email"/>
+                        {/* <label htmlFor="email" className="email" >Email</label> */}
                         <br />
                         <br />
-                        <input id="password" type="password" value={this.state.password} onChange={this.update('password')}/>
-                        <label htmlFor="password" className={this.props.formType === 'login' ? "password" : 'signup-password'}>Password</label>
+                        <input id="password" type="password" value={this.state.password} onChange={this.update('password')} placeholder="Password"/>
+                        {/* <label htmlFor="password" className={this.props.formType === 'login' ? "password" : 'signup-password'}>Password</label> */}
                         <br />
                         <p>
                             <button className="submitBttn">{this.props.formType}</button> 
