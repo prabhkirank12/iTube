@@ -2,11 +2,10 @@
     display: flex;
 }
 .videos-div{
-    border: 2px solid white;
     flex: 0.8;
     margin: 100px;
     width: 100vw;
-    margin-right: 100px;
+    margin-right: -250px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -18,13 +17,6 @@
 .one-video{
     margin: 5px;
 }
-
-// .modal-div{
-//     z-index: 100;
-//     height: 500px;
-//     width: 250px;
-//     background-color: lightskyblue;
-// }
 
 .modal-div {
   background: white;
@@ -70,10 +62,33 @@
     box-sizing: border-box;
     padding: 4px;
 }
+.video-data{
+    color: white;
+}
 
-// .modal-child {
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
+.video-title{
+    float: left;
+    margin-left: 5px;
+}
+
+.video-title > p{
+    font-size: 12px;
+}
+
+.logo-icon{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ebe9f9+0,d8d0ef+50,cec7ec+51,c1bfea+100;Purple+3D+%231 */
+    background: #ebe9f9; /* Old browsers */
+    background: -moz-linear-gradient(top,  #ebe9f9 0%, #d8d0ef 50%, #cec7ec 51%, #c1bfea 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #ebe9f9 0%,#d8d0ef 50%,#cec7ec 51%,#c1bfea 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #ebe9f9 0%,#d8d0ef 50%,#cec7ec 51%,#c1bfea 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebe9f9', endColorstr='#c1bfea',GradientType=0 ); /* IE6-9 */
+    float: left;
+    margin-left: 8px;
+}
+
+// .video:hover{
+//     controls: autoplay;
 // }

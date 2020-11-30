@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import VideoShow from "./video_show";
 import { fetchVideo, fetchVideos } from "../../actions/video_actions";
+import { fetchUser } from "../../actions/session_actions"
 import { likeVideo, unlikeVideo, dislikeVideo, undislikeVideo, changeLikeVideo } from '../../actions/video_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -20,7 +21,8 @@ const mapDispatchToProps = dispatch => ({
     unlikeVideo: (videoId) => dispatch(unlikeVideo(videoId)),
     dislikeVideo: (videoId) => dispatch(dislikeVideo(videoId)),
     undislikeVideo: (videoId) => dispatch(undislikeVideo(videoId)),
-    changeLikeVideo: (videoId) => dispatch(changeLikeVideo(videoId))
+    changeLikeVideo: (videoId) => dispatch(changeLikeVideo(videoId)),
+    fetchUser: (userId) => dispatch(fetchUser(userId)) 
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(VideoShow)

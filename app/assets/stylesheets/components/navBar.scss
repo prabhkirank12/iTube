@@ -150,6 +150,11 @@ span{
     background-color: #222222;
     color: white;
     margin-right: 8px;
+    width: 60px;
+}
+
+.dropdown-menu show{
+    width: 60px;
 }
 
 #dropdown-basic{
@@ -160,8 +165,13 @@ span{
     padding: 3px;
 }
 
-.dropdown-items{
+#dropdown-items > button{
     background-color: #222222;
-    color: white;
     display: block;
+    
+}
+
+.dropdown-item{
+    text-decoration: none;
+    color: white;
 }

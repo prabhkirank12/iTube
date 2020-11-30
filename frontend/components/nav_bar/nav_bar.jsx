@@ -63,11 +63,11 @@ class NavBar extends React.Component{
                             {this.props.currentUser.first_name[0]}
                         </Dropdown.Toggle>
 
-                        <Dropdown.Menu className="dropdown-items">
-                            <Dropdown.Item>{this.props.currentUser.first_name}</Dropdown.Item>
+                        <Dropdown.Menu id="dropdown-items">
+                            <Dropdown.Item className="dropdown-item">{this.props.currentUser.first_name}</Dropdown.Item>
                             <Dropdown.Item>{this.props.currentUser.last_name}</Dropdown.Item>
                             <br />
-                            <Dropdown.Item>{this.props.currentUser.email}</Dropdown.Item>
+                                <Dropdown.Item> {this.props.currentUser.email}</Dropdown.Item>
                             <br />
                             <Dropdown.Item onClick={this.props.logout}>Sign Out</Dropdown.Item>
                         </Dropdown.Menu>

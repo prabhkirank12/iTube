@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Link, withRouter} from 'react-router-dom';
 import * as IoIcons from 'react-icons/io';
 import NavBar from '../../components/nav_bar/nav_bar_container';
-// import Like from './likes/like_container';
 import { formatDate } from '../../util/format_date_util';
+import VideoNext from './video_next'
 class VideoShow extends React.Component {
     constructor(props){
         super(props);
@@ -50,26 +50,6 @@ class VideoShow extends React.Component {
         }
     }
 
-    handleLikeChange() {
-        let likeBtn = document.getElementById("like-btn");
-        let dislikeBtn = document.getElementById("dislike-btn");
-        let likeBar = document.getElementById("like-bar");
-
-        if(this.props.video.likerIds.includes(this.props.currentUser.id)){
-            likeBtn.classList.add("like-selected");
-            dislikeBtn.classList.remove("like-selected");
-            likeBar.classList.add("like-selected");
-        } else if (this.props.video.dislikerIds.includes(this.props.currentUser.id)){
-            likeBtn.classList.remove("like-selected");
-            dislikeBtn.classList.add("like-selected");
-            likeBar.classList.add("like-selected");
-        }else{
-            likeBtn.classList.remove("like-selected");
-            dislikeBtn.classList.remove("like-selected");
-            likeBar.classList.remove("like-selected");
-        }
-    }
-
     handleRedirectToLogin() {
         this.props.history.push('/login');
     }
@@ -92,6 +72,26 @@ class VideoShow extends React.Component {
 
     handleChangeLikeVideo(){
         this.props.changeLikeVideo(this.props.video.id);
+    }
+
+    handleLikeChange(){
+        let likeBtn = document.getElementById("like-btn");
+        let dislikeBtn = document.getElementById("dislike-btn");
+        let likeBar = document.getElementById("lik-bar");
+
+        if(this.props.video.likerIds.includes(this.props.currentUser.id)){
+            likeBtn.classList.add("like-selected");
+            dislikeBtn.classList.remove("like-selected");
+            likeBar.classList.add("like-selected");
+        } else if (this.props.video.dislikerIds.includes(this.props.currentUser.id)) {
+            likeBtn.classList.remove("like-selected");
+            dislikeBtn.classList.add("like-selected");
+            likeBar.classList.add("like-selected");
+        }else{
+            likeBtn.classList.remove("like-selected");
+            dislikeBtn.classList.remove("like-selected");
+            likeBar.classList.remove("like-selected");
+        }
     }
 
     render() {
@@ -123,35 +123,53 @@ class VideoShow extends React.Component {
         }
 
         if (this.props.video){
+            let videos = Object.values(this.props.videos).map(video => {
+                return (
+                    <VideoNext video={video} key={video.id} history={this.props.history} />
+                )
+            })
             return (
                 <div>
                 <NavBar />
                     <div className="video-show">
-                        <video width="800" height="400" autoPlay controls>
+                        <video width="800" height="400" autoPlay controls className="video-display">
                             <source src={this.props.video.videoUrl} type="video/mp4" />
                         </video>
 
                     </div>
-                   <div className="video-content">
-                       <div className="video-title">
+                   <div className="video-content-show">
+                       <div className="video-title-show">
                            {this.props.video.title}
-                           {this.props.video.description}
                        </div>
 
-                       {formatDate(this.props.video.created_at)}
-                       {/* {/* <Like video={this.props.video} /> */} 
                         <div id="video-show-buttons">
                             <div id="like-dislike-bar-container">
                                 <div id="like-bar" style={likeBarStyle}></div>
                                 <div id="dislike-bar" style={dislikeBarStyle}></div>
                             </div>
+                            <p>
+                                {formatDate(this.props.video.created_at)}
+                            </p>
                             {likeBtn}
                             {dislikeBtn}
+                            <button> <IoIcons.IoIosShareAlt /> Share </button>
+                        </div>
+
+                        <div className="video-desc-show">
+                            <hr />
+                            <button className="logo-icon"></button>
+                            <p className="show-desc">
+                                {this.props.video.description}
+                            </p>
                         </div>
 
                    </div>
-                   <Link to="/">Back</Link>
+
+                   <div className="all-videos">
+                        {videos}
+                   </div>
                </div>
+               
            )
        }else{
            return(
@@ -164,4 +182,4 @@ class VideoShow extends React.Component {
     }
 }
 
-export default VideoShow;
+export default withRouter(VideoShow);

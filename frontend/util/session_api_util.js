@@ -21,3 +21,12 @@ export const logout = () => {
     })
 }
 
+export const fetchUser = (userId) => {
+    if (userId) {
+        return $.ajax({
+            method: "GET",
+            url: `api/users/${userId}`
+        })
+    }
+}
+

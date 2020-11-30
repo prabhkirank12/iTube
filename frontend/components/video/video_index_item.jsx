@@ -4,14 +4,18 @@ import { formatDate } from '../../util/format_date_util';
 function VideoIndexItem({video, history}) {
     return (
         <div className="one-video">
-            <video width="300" height="200" controls onClick={() => { history.push(`/video/${video.id}`) }}>
+            <video className="video" width="300" height="200" controls onClick={() => { history.push(`/video/${video.id}`) }}>
                 <source src={video.videoUrl} type="video/mp4" />
             </video>
-            <div className="video-content">
+            <div className="video-data">
+                <div className="video-logo">
+                    <button className="logo-icon">{video.id}</button>
+                </div>
                 <div className="video-title">
                     {video.title}
+                    <br/>
+                    <p> {formatDate(video.created_at)} </p>
                 </div>
-                {formatDate(video.created_at)}
             </div>
         </div>
     )
