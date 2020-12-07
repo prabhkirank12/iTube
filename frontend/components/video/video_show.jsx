@@ -13,7 +13,6 @@ class VideoShow extends React.Component {
         this.handleDislikeVideo = this.handleDislikeVideo.bind(this);
         this.handleUndislikeVideo = this.handleUndislikeVideo.bind(this);
         this.handleChangeLikeVideo = this.handleChangeLikeVideo.bind(this);
-        this.handleLikeChange = this.handleLikeChange.bind(this);
         this.handleRedirectToLogin = this.handleRedirectToLogin.bind(this);
     }
 
@@ -22,11 +21,6 @@ class VideoShow extends React.Component {
         this.props.fetchVideos();
     }
 
-    componentDidUpdate(){
-        if (document.getElementById("like-btn") && document.getElementById("dislike-btn")){
-            this.handleLikeChange();
-        }
-    }
 
     getLikeProportion(){
         let numLikes = this.props.video.likerIds.length;
@@ -72,26 +66,6 @@ class VideoShow extends React.Component {
 
     handleChangeLikeVideo(){
         this.props.changeLikeVideo(this.props.video.id);
-    }
-
-    handleLikeChange(){
-        let likeBtn = document.getElementById("like-btn");
-        let dislikeBtn = document.getElementById("dislike-btn");
-        let likeBar = document.getElementById("lik-bar");
-
-        if(this.props.video.likerIds.includes(this.props.currentUser.id)){
-            likeBtn.classList.add("like-selected");
-            dislikeBtn.classList.remove("like-selected");
-            likeBar.classList.add("like-selected");
-        } else if (this.props.video.dislikerIds.includes(this.props.currentUser.id)) {
-            likeBtn.classList.remove("like-selected");
-            dislikeBtn.classList.add("like-selected");
-            likeBar.classList.add("like-selected");
-        }else{
-            likeBtn.classList.remove("like-selected");
-            dislikeBtn.classList.remove("like-selected");
-            likeBar.classList.remove("like-selected");
-        }
     }
 
     render() {
