@@ -11,6 +11,7 @@ class SessionForm extends React.Component {
             password: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.buttonText = this.buttonText.bind(this);
     }
 
     update(field) {
@@ -35,6 +36,15 @@ class SessionForm extends React.Component {
                 ))}
             </ul>
         );
+    }
+
+    buttonText() {
+        let className = 'bottom';
+        if (this.props.navLink.props.to === "/login") {
+            className = 'signInLink';
+        }
+        // console.log(this.props.navLink.props.to)
+        return <span className={className}>{this.props.navLink}</span>
     }
 
     render() {
@@ -81,9 +91,7 @@ class SessionForm extends React.Component {
                             {photo}
                         </div>
                     </div>
-                    <span className="bottom">
-                        {this.props.navLink}
-                    </span>
+                    {this.buttonText()}
                 </form>
             </div>
         );
