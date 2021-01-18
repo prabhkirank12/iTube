@@ -1,3 +1,4 @@
+//errors reducer for the videos
 import {
     RECEIVE_ERRORS
 } from '../actions/video_actions';

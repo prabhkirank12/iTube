@@ -1,3 +1,4 @@
+//The Sign up and log in forms
 import React from 'react';
 
 class SessionForm extends React.Component {

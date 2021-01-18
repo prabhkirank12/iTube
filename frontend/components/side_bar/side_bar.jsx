@@ -1,3 +1,4 @@
+//Sidebar that open when clicked on the menu icon
 import React from 'react';
 import { Link } from 'react-router-dom';
 import * as FaIcons from "react-icons/fa";

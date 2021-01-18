@@ -1,3 +1,4 @@
+//fetches all the videos in the db
 export const fetchVideos = () => {
     return $.ajax({
         method: 'GET',
@@ -5,6 +6,7 @@ export const fetchVideos = () => {
     })
 }
 
+//fetches a single video
 export const fetchVideo = (videoId) => {
     return $.ajax({
         method: 'GET',
@@ -12,6 +14,7 @@ export const fetchVideo = (videoId) => {
     })
 }
 
+//creates a new video
 export const createVideo = (video) => {
     return $.ajax({
         method: 'POST',
@@ -23,6 +26,7 @@ export const createVideo = (video) => {
     })
 }
 
+//updates an existing video inn the db
 export const updateVideo = (video) => {
     return $.ajax({
         method: 'PATCH',
@@ -31,7 +35,7 @@ export const updateVideo = (video) => {
     })
 }
 
-
+//removes a video from the db
 export const deleteVideo = (videoId) => {
     return $.ajax({
         method: 'DELETE',

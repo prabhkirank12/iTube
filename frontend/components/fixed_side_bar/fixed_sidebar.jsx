@@ -1,3 +1,4 @@
+//Fixed Sidebar on the homepage
 import React from 'react';
 import * as FaIcons from "react-icons/fa";
 import * as HiIcons from "react-icons/hi";

@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2020_11_29_223050) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  #Likes table stores all the likes for comments and videos
   create_table "likes", force: :cascade do |t|
     t.integer "liker_id", null: false
     t.integer "liked_value", null: false
@@ -50,6 +51,7 @@ ActiveRecord::Schema.define(version: 2020_11_29_223050) do
   create_table "new_indices", force: :cascade do |t|
   end
 
+  #Users table stores all the information about the user
   create_table "users", force: :cascade do |t|
     t.string "first_name", null: false
     t.string "last_name", null: false
@@ -62,6 +64,7 @@ ActiveRecord::Schema.define(version: 2020_11_29_223050) do
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
   end
 
+  #Videos table stores information about the table
   create_table "videos", force: :cascade do |t|
     t.string "title", null: false
     t.string "description"

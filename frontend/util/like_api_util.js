@@ -1,3 +1,4 @@
+//likes the video
 export  const likeVideo = (videoId) => {
     return ($.ajax({
         method: "POST",
@@ -5,6 +6,7 @@ export  const likeVideo = (videoId) => {
     }))
 }
 
+//removes the like from a video
 export const unlikeVideo = (videoId) => {
     return ($.ajax({
         method: "POST",
@@ -12,6 +14,7 @@ export const unlikeVideo = (videoId) => {
     }))
 }
 
+//adds a dislike for a video
 export const dislikeVideo = (videoId) => {
     return ($.ajax({
         method: "POST",
@@ -19,6 +22,7 @@ export const dislikeVideo = (videoId) => {
     }))
 }
 
+//removes the dislike from a video
 export const undislikeVideo = (videoId) => {
     return ($.ajax({
         method: "POST",
@@ -26,6 +30,7 @@ export const undislikeVideo = (videoId) => {
     }))
 }
 
+//keeps track of the current liked status of the video
 export const changeLikeVideo = (videoId) => {
     return ($.ajax({
         method: "POST",

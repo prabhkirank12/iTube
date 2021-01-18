@@ -1,3 +1,4 @@
+//The navigation bar
 import React from 'react';
 import { Redirect } from 'react-router';
 import { Dropdown } from 'react-bootstrap';
