@@ -23,18 +23,6 @@ class FixedSideBar extends React.Component {
                 </a>
                 <a href="https://github.com/prabhkirank12" className="new-icons">
                     <button>
-                        <HiIcons.HiOutlineFire className="side-icons" />
-                        <p id="ptag">Trending</p>
-                    </button>
-                </a>
-                <a href="https://github.com/prabhkirank12" className="new-icons">
-                    <button>
-                        <MdIcons.MdSubscriptions className="side-icons" />
-                        <p id="ptag">Trending</p>
-                    </button>
-                </a>
-                <a href="https://github.com/prabhkirank12" className="new-icons">
-                    <button>
                         <FaIcons.FaGithub className="side-icons" />
                         <p id="ptag">Github</p>
                     </button>

@@ -14,18 +14,6 @@ export const SidebarData = [
         cName: 'nav-text'
     },
     {
-        title: 'Trending',
-        path: '/',
-        icon: <HiIcons.HiOutlineFire />,
-        cName: 'nav-text'
-    },
-    {
-        title: 'Subscription',
-        path: '/',
-        icon: <MdIcons.MdSubscriptions />,
-        cName: 'nav-text'
-    },
-    {
         title: 'Github',
         path: 'https://github.com/prabhkirank12',
         icon: <FaIcons.FaGithub /> ,

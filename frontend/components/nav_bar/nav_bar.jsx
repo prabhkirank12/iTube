@@ -113,7 +113,6 @@ class NavBar extends React.Component{
                     </div>
                     <div className="right-navbar">
                         <button className="other-icon" onClick={this.upload}><RiIcons.RiVideoAddLine /></button>
-                        <button className="other-icon"><IoIcons.IoMdApps /></button>
                         <button className="other-icon">{this.moreIcon()}</button>
                          {this.showSigninDemo()}
                     </div>
