@@ -49,8 +49,8 @@ class NavBar extends React.Component{
         if(!this.props.currentUser){
             return(
                 <>
-                    <Link className="home" to="/login"> <BsIcons.BsFillPersonFill className="humanIcon" /> Sign in</Link>;
-                    <button className="home" onClick={this.handleDemoSubmit}>Demo User</button>;
+                    <Link className="home" to="/login"> <BsIcons.BsFillPersonFill className="humanIcon" /> SIGN IN</Link>;
+                    <button className="home" onClick={this.handleDemoSubmit}>DEMO</button>;
                 </>
             )
         }else{
