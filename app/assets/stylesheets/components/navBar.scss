@@ -36,14 +36,20 @@
 .search-icon {
     color: lightgrey;
     background-color: #323232;
-    font-size: 23px;
-    width: 35px;
-    height: 18px;
-    padding: 6px;
-    margin-bottom: 5px;
+    font-size: 22px;
+    width: 45px;
+    height: 25px;
+    padding: 0 8px;
+    padding-top: 3px;
+    padding-bottom: 2.5px;
+    border-radius: 2px;
+    margin-bottom: 4px;
 }
 
-
+.search-bar {
+    text-align: left;
+    background-color: #131313;
+}
 
 .right-navbar{
     position: relative;
