@@ -34,9 +34,9 @@
 }
 
 .search-icon {
-    color: lightgrey;
+    color: #4D4D4D;
     background-color: #323232;
-    font-size: 22px;
+    font-size: 10px;
     width: 45px;
     height: 25px;
     padding: 0 8px;
@@ -44,6 +44,11 @@
     padding-bottom: 2.5px;
     border-radius: 2px;
     margin-bottom: 4px;
+}
+
+.search-icon:hover {
+    color: #989899;
+    cursor: pointer;
 }
 
 .search-bar {
