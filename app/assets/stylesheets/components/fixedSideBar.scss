@@ -1,36 +1,38 @@
 div.fixed-side-bar{
     float: left;
-    background-color: #303030;
+    background-color: #212121;
     height: 100vh;
     overflow-x: hidden;
     z-index: 1;
     position: fixed;
-    top: 42px;
+    top: 40px;
     flex: 0.2;
 }
 
 .new-icons {
     color: white;
     text-decoration: none;
-    background-color: #303030;
+    background-color:#212121;
     width: 70px;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
     display: flex;
-    margin-bottom: 4px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    flex-direction: column;
+    margin-top: 35px;
+    padding: 5px;
 }
 
 .side-icons{
-    font-size: 20px;
+    font-size: 25px;
 }
 
 .new-icons:hover, .side-icons:hover{
-     background-color: #222222;   
+     background-color: #989899;
 }
 
 #ptag {
-    font-size: 10px;
+    margin-top: 8px;
+    font-size: 11px;
 }
 
 #home-icon{

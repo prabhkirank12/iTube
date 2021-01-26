@@ -123,10 +123,10 @@ class NavBar extends React.Component{
                             SidebarData.map((item, index) => {
                                 return (
                                     <li key={index} className={item.cName}>
-                                        <Link to={item.path}>
+                                        <a href={item.href} target="_blank">
                                             {item.icon}
                                             <span>{item.title}</span>
-                                        </Link>
+                                        </a>
                                     </li>
                                 )
                             })

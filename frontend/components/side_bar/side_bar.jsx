@@ -15,22 +15,16 @@ class SideBar extends React.Component{
         return(
             <div className="side-bar">
                 <Link to="/" className="home">
-                    <button>
-                        <AiIcons.AiOutlineHome />
-                        <p>Home</p>
-                    </button> 
+                    <AiIcons.AiFillHome className="side-icons" />
+                    <p>Home</p>
                 </Link>
-                <a href="https://github.com/prabhkirank12" className="github">
-                    <button>
-                        <FaIcons.FaGithub /> 
-                        <p>Github</p>
-                    </button>
+                <a target="_blank" href="https://github.com/prabhkirank12" className="github">
+                    <FaIcons.FaGithub /> 
+                    <p>Github</p>
                 </a>
-                <a href="https://github.com/prabhkirank12" className="linkedin">
-                    <button>
-                        <FaIcons.FaLinkedin/> 
-                        <p>LinkedIn</p>
-                    </button>
+                <a target="_blank" href="https://github.com/prabhkirank12" className="linkedin">
+                    <FaIcons.FaLinkedin/> 
+                    <p>LinkedIn</p>
                 </a>
             </div>
         )

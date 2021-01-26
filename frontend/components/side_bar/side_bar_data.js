@@ -9,20 +9,20 @@ import * as MdIcons from "react-icons/md";
 export const SidebarData = [
     {
         title: 'Home',
-        path: '/',
-        icon: <AiIcons.AiOutlineHome />,
-        cName: 'nav-text'
+        href: '/',
+        icon: <AiIcons.AiFillHome />,
+        cName: 'nav-text',
     },
     {
         title: 'Github',
-        path: 'https://github.com/prabhkirank12',
+        href: "https://github.com/prabhkirank12",
         icon: <FaIcons.FaGithub /> ,
-        cName: 'nav-text'
+        cName: 'nav-text',
     },
     {
         title: 'LinkedIn',
-        path: 'https://github.com/prabhkirank12',
+        href: 'https://github.com/prabhkirank12',
         icon: <FaIcons.FaLinkedin /> ,
-        cName: 'nav-text'
+        cName: 'nav-text',
     },
 ]

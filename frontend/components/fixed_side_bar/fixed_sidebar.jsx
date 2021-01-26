@@ -16,26 +16,21 @@ class FixedSideBar extends React.Component {
         return (
             <div className="fixed-side-bar">
                 <a href="/" className="new-icons" >
-                    <button id="home-icon">
-                        <AiIcons.AiOutlineHome className="side-icons" />
-                        <p id="ptag" className="home-btn">Home</p>
-                    </button>
+                    <AiIcons.AiFillHome className="side-icons" />
+                    <p id="ptag" className="home-btn">Home</p>
                 </a>
-                <a href="https://github.com/prabhkirank12" className="new-icons">
-                    <button>
-                        <FaIcons.FaGithub className="side-icons" />
-                        <p id="ptag">Github</p>
-                    </button>
+                <a target="_blank" href="https://github.com/prabhkirank12" className="new-icons">
+                    <FaIcons.FaGithub className="side-icons" />
+                    <p id="ptag">Github</p>
                 </a>
-                <a href="https://github.com/prabhkirank12" className="new-icons">
-                    <button>
-                        <FaIcons.FaLinkedin className="side-icons"/>
-                        <p id="ptag">LinkedIn</p>
-                    </button>
+                <a target="_blank" href="https://github.com/prabhkirank12" className="new-icons">
+                    <FaIcons.FaLinkedin className="side-icons"/>
+                    <p id="ptag">LinkedIn</p>
                 </a>
             </div>
         )
     }
 }
+
 
 export default FixedSideBar;
