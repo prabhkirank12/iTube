@@ -35,13 +35,13 @@ class NavBar extends React.Component{
         this.props.currentUser
     }
 
-    moreIcon() {
-        if(this.props.currentUser){
-            return <FaIcons.FaBell />
-        }else{
-            return <BsIcons.BsThreeDotsVertical />
-        }
-    }
+    // moreIcon() {
+    //     if(this.props.currentUser){
+    //         return <FaIcons.FaBell />
+    //     }else{
+    //         return <BsIcons.BsThreeDotsVertical />
+    //     }
+    // }
 
     showSigninDemo() {
         // debugger;
