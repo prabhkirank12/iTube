@@ -18,7 +18,7 @@ class NavBar extends React.Component{
         };
         this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
         this.showSidebar = this.showSidebar.bind(this);
-        this.moreIcon = this.moreIcon.bind(this);
+        // this.moreIcon = this.moreIcon.bind(this);
         this.showSigninDemo = this.showSigninDemo.bind(this);
         this.upload = this.upload.bind(this);
     }
@@ -70,7 +70,7 @@ class NavBar extends React.Component{
                             <br />
                             <Dropdown.Item> {this.props.currentUser.email}</Dropdown.Item>
                             <br />
-                            <Dropdown.Item onClick={this.props.logout}>Sign Out</Dropdown.Item>
+                                <Dropdown.Item onClick={this.props.logout}> <RiIcons.RiLogoutBoxRLine/> Sign Out</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </div>
@@ -113,7 +113,7 @@ class NavBar extends React.Component{
                     </div>
                     <div className="right-navbar">
                         <button className="other-icon" onClick={this.upload}><RiIcons.RiVideoAddLine /></button>
-                        <button className="other-icon">{this.moreIcon()}</button>
+                        {/* <button className="other-icon">{this.moreIcon()}</button> */}
                          {this.showSigninDemo()}
                     </div>
                 </div>
