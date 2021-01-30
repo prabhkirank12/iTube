@@ -165,8 +165,8 @@ span{
 #dropdown-basic{
     border: 2px solid #024C3F;
     background-color: #024C3F;
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     font-size: 18px;
     padding: 3px;
@@ -178,11 +178,44 @@ span{
     width: 300px;
     height: 150px;
     text-align: left;
+    margin-left: 20px;
+    text-decoration: none;
 }
 
-.dropdown-item{
+.dropdownItem {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#dropdownItem {
+    margin-left: 40px;
+}
+
+.profileIcon {
+    font-size: 40px;
+    color: #044C3F;
+    // top: -50px;
+    // margin-top: 15px;
+    margin-left: 20px;
+}
+
+.logOutItem  {
     text-decoration: none;
     color: white;
-    font-family: sans-serif;
-    font-size: 15px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.logOutIcon {
+    color: #909090;
+    font-size: 25px;
+    margin-top: 20px;
+    margin: 0 20px;
+}
+
+.dropdownBreak {
+    color: #909090;
+    // size: 1px;
 }

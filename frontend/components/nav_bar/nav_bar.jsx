@@ -5,7 +5,7 @@ import { Dropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import * as FaIcons from "react-icons/fa";
 import * as BsIcons from "react-icons/bs";
-import * as IoIcons from "react-icons/io";
+import * as CgIcons from "react-icons/cg";
 import * as AiIcons from "react-icons/ai";
 import * as RiIcons from "react-icons/ri";
 import { SidebarData } from "../side_bar/side_bar_data"
@@ -65,12 +65,12 @@ class NavBar extends React.Component{
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu id="dropdown-items">
-                            <Dropdown.Item className="dropdown-item">{this.props.currentUser.first_name}</Dropdown.Item>
-                            <Dropdown.Item>{this.props.currentUser.last_name}</Dropdown.Item>
+                            {/* <CgIcons.CgProfile className="profileIcon" /> */}
+                            <Dropdown.Item className="dropdownItem"> <CgIcons.CgProfile className="profileIcon" /> {this.props.currentUser.first_name} </Dropdown.Item>
                             <br />
-                            <Dropdown.Item> {this.props.currentUser.email}</Dropdown.Item>
-                            <br />
-                                <Dropdown.Item onClick={this.props.logout}> <RiIcons.RiLogoutBoxRLine/> Sign Out</Dropdown.Item>
+                            <Dropdown.Item className="dropdownItem"> {this.props.currentUser.email}</Dropdown.Item>
+                            <hr className="dropdownBreak" size="1"/>
+                            <Dropdown.Item onClick={this.props.logout} className="logOutItem"> <RiIcons.RiLogoutBoxRLine className="logOutIcon" /> Sign Out</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </div>
