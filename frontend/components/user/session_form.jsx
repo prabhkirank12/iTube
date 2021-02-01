@@ -38,7 +38,7 @@ class SessionForm extends React.Component {
     }
 
     render() {
-        const photo = (this.props.formType === 'signup') ? <img src={window.signupUrl} />: null ;
+        const photo = (this.props.formType === 'signup') ? <img src={window.logoUrl} />: null ;
         const title = (this.props.formType === 'login') ? 'Sign in' : 'Create your Google Account'
         const fullSignup = (this.props.formType === 'signup') ? (
                 <>

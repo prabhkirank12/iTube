@@ -155,6 +155,12 @@ input:focus + label {
 
 }
 
+input[type="text"], input[type="password"]::placeholder {  
+    /* Firefox, Chrome, Opera */ 
+    text-align: left; 
+    font-size: 14px;
+} 
+
 .signup-photo > img{
     float: right;
     justify-content: end;
@@ -186,4 +192,13 @@ input:focus + label {
 
 .signup-password{
     width: 20px;
+}
+
+.bottom {
+    display: flex;
+    justify-content: flex-start;
+    > a {
+        text-decoration: none;
+        color: #1D72E8;
+    }
 }
