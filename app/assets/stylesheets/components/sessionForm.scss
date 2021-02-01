@@ -66,10 +66,16 @@ form{
     margin-top: 100px;
 }
 
-img{
+.signInImg{
     width: 80px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.signUpImg {
+    width: 70px;
+    margin-top: -30px;
+    margin-left: -5px;
 }
 
 .title {
@@ -77,8 +83,12 @@ img{
     margin-right: auto; 
     text-align: center;
     font-size: 25px;
+    margin-top: -17px;
 }
 
+.signUpTitle {
+    font-size: 25px;
+}
 
 .submitBttn, .bottom {
     margin-top: 50px;
@@ -91,18 +101,36 @@ img{
     display: flex;
     justify-content: center;
     float: right;
-    width: 62px;
-    height: 20px;
+    width: 60px;
+    height: 26px;
     border: 1px solid #dadcdf;
     border-radius: 5px;
     background-color: #2174E7 ;
     color: white;
     padding: 5px 8px;
+    align-items: center;
 }
 
 
-.submitBttn:hover{
+.submitBttn:hover, .signUpBttn:hover {
     background-color: #1F65C9;
+}
+
+.signUpBttn {
+    margin-top: 30px;
+    margin-right: 32px;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: right;
+    width: 60px;
+    height: 26px;
+    border: 1px solid #dadcdf;
+    border-radius: 5px;
+    background-color: #2174E7 ;
+    color: white;
+    padding: 5px 8px;
 }
 
 span{
@@ -126,13 +154,18 @@ input {
 
  .txt {
     text-align: center;
+    margin-top: 13px;
 }
 
- .email, .password, .Name, label, input {
-     transition: all 0.2s;
- }
+.signUpText {
+    margin-top: 13px;
+}
 
- label{
+.email, .password, .Name, label, input {
+     transition: all 0.2s;
+}
+
+label {
       display: inline-block;
      top: -15px;
      left: 8px;
@@ -159,13 +192,13 @@ input[type="text"], input[type="password"]::placeholder {
     font-size: 14px;
 } 
 
-.signup-photo > img{
+.signupPhoto > img{
     float: right;
     justify-content: end;
     margin: 0;
-    margin-right: -113px;
-    margin-top: -335px;
-    width: 300px;
+    // margin-right: -100px;
+    margin-top: -310px;
+    width: 295px;
     user-select: none;
     
 }
@@ -175,8 +208,14 @@ input[type="text"], input[type="password"]::placeholder {
     border: 1px solid #d9dcdf;
     border-radius: 4px;
     padding: 13px 15px 13px 15px;
-    width: 180px;
+    width: 145px;
     margin: 0 0 4px 0;
+    margin-right: 15px;
+}
+
+#fname:focus, #lname:focus{
+    border: 2px solid #055fd4;
+    border-radius: 4px;
 }
 
 #lname {
@@ -184,8 +223,8 @@ input[type="text"], input[type="password"]::placeholder {
     border: 1px solid #d9dcdf;
     border-radius: 4px;
     padding: 13px 15px 13px 15px;
-    width: 180px;
-    margin: 0 0 4px 0
+    width: 145px;
+    margin: 0 0 4px 0;
 }
 
 .signup-password{
@@ -204,13 +243,13 @@ input[type="text"], input[type="password"]::placeholder {
 .signInLink {
     display: flex;
     justify-content: flex-start;
-    margin-top: 48px;
+    margin-top: 44px;
     > a {
         text-decoration: none;
         color: #1D72E8;
     }
     > a:hover {
-            color: #164EA5;
+        color: #164EA5;
         background-color: #F6F9FE;
         padding: 6px;
         position: sticky;

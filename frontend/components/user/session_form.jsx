@@ -12,6 +12,10 @@ class SessionForm extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.buttonText = this.buttonText.bind(this);
+        this.titleText = this.titleText.bind(this);
+        this.titleCaption = this.titleCaption.bind(this);
+        this.imageIcon = this.imageIcon.bind(this);
+        this.submitBttn = this.submitBttn.bind(this);
     }
 
     update(field) {
@@ -47,9 +51,41 @@ class SessionForm extends React.Component {
         return <span className={className}>{this.props.navLink}</span>
     }
 
-    render() {
-        const photo = (this.props.formType === 'signup') ? <img src={window.logoUrl} />: null ;
+    imageIcon() {
+        let className = 'signInImg'
+        if (this.props.formType !== 'login') {
+            className = 'signUpImg';
+        }
+        return <img src={window.iconUrl} className={className} alt="iTube" />
+    }
+
+    titleText(){
         const title = (this.props.formType === 'login') ? 'Sign in' : 'Create your Google Account'
+        let className = 'title';
+        if (this.props.formType !== 'login') {
+            className = 'signUpTitle';
+        }
+        return <p className = {className}>{title}</p>
+    }
+
+    titleCaption(){
+        let className = 'txt';
+        if (this.props.formType !== 'login') {
+            className = 'signUpText';
+        }
+        return <p className={className}>to continue to iTube</p>;
+    }
+
+    submitBttn(){
+        let className = 'submitBttn'
+        if (this.props.formType !== 'login') {
+            className = 'signUpBttn';
+        }
+        return <p><button className={className}>{this.props.formType}</button></p>
+    }
+
+    render() {
+        const photo = (this.props.formType === 'signup') ? <img src={window.signupUrl} />: null ;
         const fullSignup = (this.props.formType === 'signup') ? (
                 <>
                     {/* <label htmlFor="fname" className="Name"> First Name</label> */}
@@ -63,17 +99,10 @@ class SessionForm extends React.Component {
         return (
             <div className="form-div">
                 <form className={this.props.formType === 'login' ? "theform" : "signup-form"} onSubmit={this.handleSubmit}>
-                    <br />
-                    <img src={window.googleUrl} alt="Google"/>
-                    <br />
-                    <p className="title">
-                        {title} 
-                    </p>
-                    <p className="txt">
-                        to continue to iTube
-                    </p>
-                    <br />
-                        {this.renderErrors()}
+                    {this.imageIcon()}
+                    {this.titleText()}
+                    {this.titleCaption()}
+                    {this.renderErrors()}
                     <div className={this.props.formType === 'login' ? "login-div" : "signup-div"} >
                         <br />
                         { fullSignup }
@@ -84,14 +113,12 @@ class SessionForm extends React.Component {
                         <input id="password" type="password" value={this.state.password} onChange={this.update('password')} placeholder="Password"/>
                         {/* <label htmlFor="password" className={this.props.formType === 'login' ? "password" : 'signup-password'}>Password</label> */}
                         <br />
-                        <p>
-                            <button className="submitBttn">{this.props.formType}</button> 
-                        </p>
-                        <div className="signup-photo">
+                        <div className="signupPhoto">
                             {photo}
                         </div>
+                        {this.submitBttn()}
+                        {this.buttonText()}
                     </div>
-                    {this.buttonText()}
                 </form>
             </div>
         );
