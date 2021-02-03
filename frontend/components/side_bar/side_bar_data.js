@@ -25,4 +25,10 @@ export const SidebarData = [
         icon: <FaIcons.FaLinkedin /> ,
         cName: 'nav-text',
     },
+    {
+        title: 'AngelList',
+        href: 'https://angel.co/u/prabhkiran-kaur',
+        icon: <FaIcons.FaAngellist />,
+        cName: 'nav-text', 
+    }
 ]

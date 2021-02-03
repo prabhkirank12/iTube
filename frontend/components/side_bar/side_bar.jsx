@@ -26,6 +26,10 @@ class SideBar extends React.Component{
                     <FaIcons.FaLinkedin/> 
                     <p>LinkedIn</p>
                 </a>
+                <a target="_blank" href="https://angel.co/u/prabhkiran-kaur" className="new-icons">
+                    <FaIcons.FaAngellist className="side-icons" />
+                    <p id="ptag">AngelList</p>
+                </a>
             </div>
         )
     }
