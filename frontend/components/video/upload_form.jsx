@@ -58,11 +58,11 @@ class UploadForm extends React.Component {
     render() {
         return (
             <div className="modal-div">
-                <p className="form-header">
-                    Upload Videos
-                </p>
-                <div>
-                    <IoIcons.IoMdClose onClick={this.props.closeModal} />
+                <div className="formTitle">
+                    <p className="form-header">
+                        Upload Videos
+                    </p>
+                    <IoIcons.IoMdClose className="crossIcon" onClick={this.props.closeModal} />
                 </div>
                 <hr />
                 <div className="upload-file"

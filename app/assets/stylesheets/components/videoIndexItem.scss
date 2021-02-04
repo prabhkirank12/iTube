@@ -26,14 +26,29 @@
   border-radius: 6px;
 }
 
-.form-header{
+.formTitle {
     display: flex;
-    align-content: flex-start;
-    height: 20px;
+    justify-content: space-between;
+    padding: 4px;
+}
+
+.form-header{
     padding: 20px 0px 15px 20px;
     font-size: 20px;
     font-weight: 500;
 }
+
+.crossIcon {
+    color: #949494;
+    font-size: 30px;
+    padding: 20px 15px 15px 0px;
+    cursor: pointer;
+}
+
+.crossIcon:hover{
+    color: #222222;
+}
+
 
 .upload-icon{
     margin-top: 30px;
@@ -50,6 +65,7 @@
 .upload-file{
     margin-top: 60px;
 }
+
 
 .select-bttn-input{
     display: none;
