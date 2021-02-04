@@ -57,10 +57,10 @@ class UploadForm extends React.Component {
     render() {
         return (
             <div className="modal-div">
-                <div className="form-header">
-                    <p>Upload Videos</p>
-                    <hr />
-                </div>
+                <p className="form-header">
+                    Upload Videos
+                </p>
+                <hr />
                 <div className="upload-file"
                         onDrop={this.handleDrop}
                         onDragEnter={this.handleDragEnter}
@@ -71,12 +71,12 @@ class UploadForm extends React.Component {
                         <MdIcons.MdFileUpload className="upload-icon" />
                     </label>
                     <p>Drag and drop video files to upload</p>
-                    <p>Your videos willl be private until you publish them.</p>
+                    <p>Your videos will be private until you publish them.</p>
                     <label className="select-label"> 
                         <input className="select-bttn-input" type="file" 
                         accept=".mkv, .webm, .flv, .vob, .mng, .avi, .wmv, .qt, .mp4, .mpg, .m4v"
                         onChange={this.handleFile} />
-                        <button className="select-bttn">Select Files</button>
+                        <button onClick={this.handleFile} className="select-bttn">Select Files</button>
                     </label>
                     <button className="select-bttn" onClick={this.handleSubmit}>Submit</button>
                 </div>
