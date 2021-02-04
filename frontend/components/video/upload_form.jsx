@@ -1,5 +1,6 @@
 import React from 'react'
 import * as MdIcons from "react-icons/md";
+import * as IoIcons from "react-icons/io";
 
 
 class UploadForm extends React.Component {
@@ -60,6 +61,9 @@ class UploadForm extends React.Component {
                 <p className="form-header">
                     Upload Videos
                 </p>
+                <div>
+                    <IoIcons.IoMdClose onClick={this.props.closeModal} />
+                </div>
                 <hr />
                 <div className="upload-file"
                         onDrop={this.handleDrop}
