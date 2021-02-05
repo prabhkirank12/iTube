@@ -74,8 +74,8 @@ class UploadForm extends React.Component {
                         <input className="upload-icon-input" type="file" onClick={this.handleFile} />
                         <MdIcons.MdFileUpload className="upload-icon" />
                     </label>
-                    <p>Drag and drop video files to upload</p>
-                    <p>Your videos will be private until you publish them.</p>
+                    <p className="topText">Drag and drop video files to upload</p>
+                    <p className="bttmText">Your videos will be private until you publish them.</p>
                     <label className="select-label"> 
                         <input className="select-bttn-input" type="file" 
                         accept=".mkv, .webm, .flv, .vob, .mng, .avi, .wmv, .qt, .mp4, .mpg, .m4v"

@@ -11,7 +11,7 @@ const mapStateToProps = (state, ownProps) => {
     };
 };
 
-const mapDispatchToProps => {
+const mapDispatchToProps = dispatch => {
     return {
         processForm: (video) => dispatchEvent(updateVideo(video)),
         closeModal: () => dispatch(closeModal())
