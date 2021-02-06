@@ -80,7 +80,7 @@ class UploadForm extends React.Component {
                         <input className="select-bttn-input" type="file" 
                         accept=".mkv, .webm, .flv, .vob, .mng, .avi, .wmv, .qt, .mp4, .mpg, .m4v"
                         onChange={this.handleFile} />
-                        <button onClick={this.handleFile} className="select-bttn">Select Files</button>
+                        <button onClick={this.handleSubmit} className="select-bttn">Select Files</button>
                     </label>
                     <button className="select-bttn" onClick={this.handleSubmit}>Submit</button>
                 </div>
