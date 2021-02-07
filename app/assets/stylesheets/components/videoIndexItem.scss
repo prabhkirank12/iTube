@@ -177,19 +177,21 @@
     color: rgb(103, 103, 103);
 }
 
-.form-container form label:focus + label {
-    border-color: rgb(0, 89, 255);
+form .title-label label:focus + label {
+    color:  rgb(0, 89, 255);
+    font-size: 90px;
 }
+
 .form-container form .title-label {
     position: absolute;
     top: 135px;
-    left: 58px;
+    left: 50px;
 }
 
 .form-container form .desc-label {
     position: absolute;
     top: 220px;
-    left: 58px;
+    left: 50px;
 }
 
 

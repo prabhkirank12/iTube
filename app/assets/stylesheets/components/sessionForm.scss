@@ -150,6 +150,7 @@ input {
     padding: 13px 15px 13px 15px;
     width: 340px;
     margin: 0 0 4px 0;
+    text-align: left;
  }
 
  .txt {
@@ -165,32 +166,34 @@ input {
      transition: all 0.2s;
 }
 
-// label {
-//       display: inline-block;
-//      top: -15px;
-//      left: 8px;
-//      position: relative;
-//      float: none;
-//      transition: all 0.3s ease;
-//      background-color: #ffffff;
-//      padding: 2px 8px;
-//      cursor: auto;
-//      color: #7f868a;
-// }
+label {
+    display: inline-block;
+    //  top: -15px;
+    //  left: 8px;
+     position: relative;
+     float: none;
+    //  transition: all 0.3s ease;
+     background-color: #ffffff;
+     padding: 2px 8px;
+     cursor: auto;
+     color: #7f868a;
+}
 
-// input:focus + label {
-//     top: -62px;
-//     left: -120px;
-//     font-size: 12px;
-//     color: rgb(46, 129, 214);
+input:focus + label {
+    font-size: 12px;
+    color: rgb(46, 129, 214);
+}
 
-// }
-
-input[type="text"], input[type="password"]::placeholder {  
+input[type="password"]::placeholder {  
     /* Firefox, Chrome, Opera */ 
     text-align: left; 
     font-size: 14px;
 } 
+
+input[type="text"]::placeholder {
+    text-align: left; 
+    font-size: 14px;
+}
 
 .signupPhoto > img{
     float: right;
