@@ -6,14 +6,14 @@ import UploadVideoForm from './upload_form';
 const mapStateToProps = (state, ownProps) => {
     return {
         errors: state.errors.videos,
-        videos: state.entities.videos,
-        formType: "Edit"
+        video: state.entities.videos[ownProps.videoId],
+        formType: "edit"
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        processForm: (video) => dispatchEvent(updateVideo(video)),
+        processForm: (video) => dispatch(updateVideo(video)),
         closeModal: () => dispatch(closeModal())
     };
 };

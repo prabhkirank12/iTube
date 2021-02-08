@@ -14,38 +14,64 @@ class UploadForm extends React.Component {
         };
         this.handleFile = this.handleFile.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleEdit = this.handleEdit.bind(this);
         this.handleDrop = this.handleDrop.bind(this);
         this.handleDragOver = this.handleDragOver.bind(this);
-        this.handleDragLeave = this.handleDragLeave.bind(this);
         this.handleDragEnter = this.handleDragEnter.bind(this);
+
     }
+
+    componentDidMount() {
+        if (this.props.formType === "edit") {
+            this.handleEdit();
+        }
+    }
+
     handleFile(e){
         const video = e.currentTarget.files[0];
-        const link = e.target.result;
-        this.setState({videoFile: video, videoUrl: link, title: video.name});
+        const videoReader = new FileReader();
+
+        videoReader.onloadend = (e) => {
+            const link = e.target.result;
+            this.setState({videoFile: video, videoUrl: link, title: video.name});
+        };
+
+        if (video) {
+            videoReader.readAsDataURL(video);
+        }
     }
 
     handleSubmit(e){
         e.preventDefault();
         const formData = new FormData();
-        formData.append('video[title]', this.state.title);
-        formData.append('video[description]', this.state.description);
-        formData.append('video[video]', this.state.videoFile);
-        this.props.processForm(formData);
+        let video = {};
+
+        if (this.props.formType === 'edit') {
+            let parts = this.props.location.pathname.split('/');
+            let currentVideoId = parts.pop();
+            video = {
+                id: currentVideoId,
+                title: this.state.title,
+                body: this.state.body
+            };
+            this.props.processForm(video);
+        } else {
+            formData.append('video[title]', this.state.title);
+            formData.append('video[description]', this.state.description);
+            formData.append('video[video]', this.state.videoFile);
+            this.props.processForm(formData);
+        }
         this.props.closeModal();
     }
 
-    handleDrop(e){
-        e.preventDefault();
-        e.stopPropagation;
-        const video = e.dataTransfer.files[0];
-        this.setState({ videoFile: video});
+    handleEdit(){
+        let parts = this.props.location.pathname.split('/');
+        let currentVideoId = parts.pop();
+        let currentVideo = this.props.videos[currentVideoId];
+        this.setState({ title: currentVideo.title, body: currentVideo.body, videoUrl: currentVideo.videoUrl})
     }
+    
     handleDragOver(e) {
-        e.preventDefault();
-        e.stopPropagation;
-    }
-    handleDragLeave(e) {
         e.preventDefault();
         e.stopPropagation;
     }
@@ -54,6 +80,14 @@ class UploadForm extends React.Component {
         e.preventDefault();
         e.stopPropagation;
     }
+
+    handleDrop(e){
+        e.preventDefault();
+        e.stopPropagation;
+        const video = e.dataTransfer.files[0];
+        this.setState({ videoFile: video});
+    }
+
 
     render() {
         return (
@@ -80,7 +114,7 @@ class UploadForm extends React.Component {
                         <input className="select-bttn-input" type="file" 
                         accept=".mkv, .webm, .flv, .vob, .mng, .avi, .wmv, .qt, .mp4, .mpg, .m4v"
                         onChange={this.handleFile} />
-                        <button onClick={this.handleSubmit} className="select-bttn">Select Files</button>
+                        {/* <button onClick={this.handleSubmit} className="select-bttn">Select Files</button> */}
                     </label>
                     <button className="select-bttn" onClick={this.handleSubmit}>Submit</button>
                 </div>

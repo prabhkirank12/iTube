@@ -38,7 +38,7 @@ class SessionForm extends React.Component {
                         {error}
                     </li>
                 ))} */}
-                {this.props.field}
+                {this.props.errors}
             </ul>
         );
     }
