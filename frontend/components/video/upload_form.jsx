@@ -90,6 +90,13 @@ class UploadForm extends React.Component {
 
 
     render() {
+        let file = '';
+        if (this.state.videoFile) {
+            file = this.state.videoFile.name;
+        } else {
+            file = this.state.title;
+        }
+
         return (
             <div className="modal-div">
                 <div className="formTitle">
