@@ -120,7 +120,17 @@ class UploadForm extends React.Component {
                     </div>
                         
                     {(this.state.videoFile || this.state.videoUrl) ? (
-                        <div>
+                        <div className="info-section">
+                            <div className="info-container column">
+                                <h1>Details</h1>
+                                <label className="title-field">Title (required)
+                                    <input type="text" value = {title} onChange={this.handleInput("title")} placeholder="Add a title that describes your video" />
+                                </label>
+
+                                <label className="desc-field">Description 
+                                    <textarea value={description} onChange={this.handleInput("description")} placeholder="Tell viewers about your video"> </textarea>
+                                </label>
+                            </div>
 
                         </div>
                     ) : (
