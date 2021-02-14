@@ -111,6 +111,19 @@ class UploadForm extends React.Component {
             file = this.state.title;
         }
 
+        const videoPreview = this.state.videoFile ? (
+            <div className="video-container column">
+                <video controls>
+                    <source src={this.state.videoUrl}/>
+                    Sorry, your browser doesn't support embedded videos.
+                </video>
+
+                <p>Filename</p>
+                <p>{file}</p>
+            </div>
+        ) : (null)
+
+        // const editVideoPreview = this.state
         return (
             <>
                 <form onSubmit={this.handleSubmit} className="upload-video-form">
@@ -124,14 +137,15 @@ class UploadForm extends React.Component {
                             <div className="info-container column">
                                 <h1>Details</h1>
                                 <label className="title-field">Title (required)
-                                    <input type="text" value = {title} onChange={this.handleInput("title")} placeholder="Add a title that describes your video" />
+                                    <input type="text" value = {this.state.title} onChange={this.handleInput("title")} placeholder="Add a title that describes your video" />
                                 </label>
 
                                 <label className="desc-field">Description 
-                                    <textarea value={description} onChange={this.handleInput("description")} placeholder="Tell viewers about your video"> </textarea>
+                                    <textarea value={this.state.description} onChange={this.handleInput("description")} placeholder="Tell viewers about your video"> </textarea>
                                 </label>
                             </div>
 
+                            {videoPreview}
                         </div>
                     ) : (
                         <div className="modal-div">
