@@ -122,7 +122,7 @@ class UploadForm extends React.Component {
                         <hr />
                         <div className="info-section">
                             <h1 className="details-heading">Details</h1>
-                            <div>
+                            <div className="form-container">
                                 <form className="video-preview-form" onSubmit={this.handleSubmit}>
                                     <input className="title-preview" type="text" onChange={this.handleInput("title")} value={this.state.title} placeholder="Add a title that describes your video"/>
                                     <label className="title-label">Title (required)</label>
@@ -132,7 +132,7 @@ class UploadForm extends React.Component {
                             </div>
 
                             <div className="video-preview">
-                                <video className="preview-video" height="133" width="236" controls>
+                                <video className="preview-video" height="136" width="236" controls>
                                     <source src={this.state.videoUrl} />
                                 </video>
 
@@ -142,6 +142,7 @@ class UploadForm extends React.Component {
                                 </div>
                             </div>
                         </div>
+                        <hr />
                         <button id="video-submit-bttn" onClick={this.handleSubmit}>{this.props.formType}</button>
                     </div>
                 </>
@@ -166,7 +167,7 @@ class UploadForm extends React.Component {
                             <p className="bttm-text">Your videos will be private until you publish them.</p>
                             <label>
                                 <input className="select-input" type="file" onChange={this.handleFile} />
-                                <span className="select-label">SELECT FILE</span>
+                                <p className="select-label">SELECT FILE</p>
                             </label>
                         </div>
                     </div >

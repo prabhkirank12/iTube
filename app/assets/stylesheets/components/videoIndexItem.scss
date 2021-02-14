@@ -90,6 +90,8 @@
     padding: 10px 18px;
     font-size: 14px;
     border-radius: 3px;
+    width: 123px;
+    margin: 0 auto;
 }
 
 .select-label:hover {
@@ -159,19 +161,37 @@
 .video-preview-form {
     margin-top: 45px;
     margin-left: -58px;
+
     > .title-preview {
-        height: 65px;
+        height: 40px;
+        margin-bottom: 15px;
     }
 
     > .description-preview {
-        height: 130px;
-    }
-    > .preview-label {
-        top: 0;
-        left: 0;
-        
+        height: 110px;
     }
 }
+
+.form-container form label {
+    font-size: 12px;
+    color: rgb(103, 103, 103);
+}
+
+.form-container form label:focus + label {
+    border-color: rgb(0, 89, 255);
+}
+.form-container form .title-label {
+    position: absolute;
+    top: 135px;
+    left: 58px;
+}
+
+.form-container form .desc-label {
+    position: absolute;
+    top: 220px;
+    left: 58px;
+}
+
 
 .video-preview {
     margin-top: 45px;
@@ -200,4 +220,8 @@
             padding-left: 6px;
         }
     }
+}
+
+#video-submit-bttn {
+    justify-content: flex-end;
 }
