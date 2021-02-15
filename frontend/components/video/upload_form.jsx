@@ -111,43 +111,47 @@ class UploadForm extends React.Component {
             file = this.state.title;
         }
 
-        const videoPreview = this.state.videoFile ? (
-            <div className="video-container column">
-                <video controls>
-                    <source src={this.state.videoUrl}/>
-                    Sorry, your browser doesn't support embedded videos.
-                </video>
-
-                <p>Filename</p>
-                <p>{file}</p>
-            </div>
-        ) : (null)
-
-        // const editVideoPreview = this.state
-        return (
-            <>
-                <form onSubmit={this.handleSubmit} className="upload-video-form">
+       if(this.state.videoFile || this.state.videoUrl) {
+           return (
+               <>
                     <div className="video-form-header">
                         <h2>{this.state.title}</h2>
                         <IoIcons.IoMdClose className="crossIcon" onClick={this.props.closeModal} />
                     </div>
-                        
-                    {(this.state.videoFile || this.state.videoUrl) ? (
-                        <div className="info-section">
-                            <div className="info-container column">
-                                <h1>Details</h1>
-                                <label className="title-field">Title (required)
-                                    <input type="text" value = {this.state.title} onChange={this.handleInput("title")} placeholder="Add a title that describes your video" />
-                                </label>
-
-                                <label className="desc-field">Description 
-                                    <textarea value={this.state.description} onChange={this.handleInput("description")} placeholder="Tell viewers about your video"> </textarea>
-                                </label>
+                    <hr />
+                    <div className="info-section">
+                        <h1>Details</h1>
+                        <div className="video-upload-preview">
+                            <video controls>
+                                <source src={this.state.videoUrl}/>
+                                There was a problem rendering the video
+                            </video>
+                            <div className="video-upload-details">
+                                <div className="video-preview-link">
+                                    <label>Video Link</label>
+                                    <a>Avaliable after successful upload</a>
+                                </div>
+                                <i className="far fa-copy"></i>
                             </div>
-
-                            {videoPreview}
+                            <div className="video-prev-filename">
+                                <div>
+                                    <label>Filename</label>
+                                    <p>{file}</p>
+                                </div>
+                            </div>
                         </div>
-                    ) : (
+                    </div>
+                    <footer>
+                        <div>
+                            <i className="fab fa-js-sqaure"></i>
+                            <p>Finished Processing</p>
+                        </div>
+                        <button id="video-submit-bttn" onClick={this.handleSubmit}>{this.props.formType}</button>
+                    </footer>
+                </>
+           ) 
+        } else {
+                return (
                         <div className="modal-div">
                             <div className="form -title">
                                 <p className="form-header"> Upload Videos</p>
@@ -164,25 +168,23 @@ class UploadForm extends React.Component {
                                 </label>
                                 <p className="top-text">Drag and drop video files to upload</p>
                                 <p className="bttm-text">Your videos will be private until you publish them.</p>
-                                    {/* <label className="select-label"> 
-                                        <input className="select-bttn-input" type="file" 
-                                        accept=".mkv, .webm, .flv, .vob, .mng, .avi, .wmv, .qt, .mp4, .mpg, .m4v"
-                                        onChange={this.handleFile} />
-                                        {/* <button onClick={this.handleSubmit} className="select-bttn">Select Files</button> */}
-                                    {/* </label> */} 
+                                {/* <label className="select-label"> 
+                                <input className="select-bttn-input" type="file" 
+                                accept=".mkv, .webm, .flv, .vob, .mng, .avi, .wmv, .qt, .mp4, .mpg, .m4v"
+                                onChange={this.handleFile} />
+                                {/* <button onClick={this.handleSubmit} className="select-bttn">Select Files</button> */}
+                                {/* </label> */}
                                 <label>
-                                    <input type="file" onChange={this.handleFile}/>
+                                    <input type="file" onChange={this.handleFile} />
                                     <span id="select-label">SELECT FILES</span>
                                 </label>
                                 {/* <button className="select-bttn" onClick={this.handleSubmit}>Submit</button> */}
                             </div>
                         </div >
-                        )}
-                </form>
-                </>
-            )
 
-     }
+                )
+            }
+       }
 }
 
 export default UploadForm;
