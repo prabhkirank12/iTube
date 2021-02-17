@@ -117,7 +117,7 @@ class UploadForm extends React.Component {
                     <div className="video-form-container">
                         <div className="video-form-header">
                             <h2>{this.state.title}</h2>
-                            <IoIcons.IoMdClose className="crossIcon" onClick={this.props.closeModal} />
+                            <IoIcons.IoMdClose className="cross-icon" onClick={this.props.closeModal} />
                         </div>
                         <hr />
                         <div className="info-section">
