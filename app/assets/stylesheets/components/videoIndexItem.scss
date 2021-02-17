@@ -128,6 +128,7 @@
 
 .video-form-container {
     background-color: white;
+    border-radius: 3px;
 }
 
 // video preview container
@@ -158,9 +159,8 @@
 }
 
 .video-preview-form {
-    border: 1px solid green;
-    margin-top: 30px;
-    margin-left: -60px;
+    margin-top: 45px;
+    margin-left: -58px;
     > input[type="text"] {
         // margin-left: 40px;
     }
@@ -168,5 +168,19 @@
     > .preview-label {
         display: flex;
         transition: none;
+    }
+}
+
+.video-preview {
+    margin-top: 45px;
+    margin-left: 20px;
+    > video {
+        border-radius: 3px 3px 0px 0px;
+    }
+    > .filename-container {
+        width: 303px;
+        background-color: #989899;
+        margin-top: -5px;
+        border-radius: 0px 0px 3px 3px;
     }
 }

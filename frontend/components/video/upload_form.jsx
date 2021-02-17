@@ -132,16 +132,15 @@ class UploadForm extends React.Component {
                             </div>
 
                             <div className="video-preview">
-                                <video height="170" width="303" controls>
+                                <video className="preview-video" height="170" width="303" controls>
                                     <source src={this.state.videoUrl} />
                                 </video>
 
                                 <div className="filename-container">
-                                    <label>Filename</label>
+                                    <p>Filename</p>
                                     <p>{file}</p>
                                 </div>
                             </div>
-
                         </div>
                         <button id="video-submit-bttn" onClick={this.handleSubmit}>{this.props.formType}</button>
                     </div>
