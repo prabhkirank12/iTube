@@ -114,40 +114,36 @@ class UploadForm extends React.Component {
        if(this.state.videoFile || this.state.videoUrl) {
            return (
                <>
-                    <div className="video-form-header">
-                        <h2>{this.state.title}</h2>
-                        <IoIcons.IoMdClose className="crossIcon" onClick={this.props.closeModal} />
-                    </div>
-                    <hr />
-                    <div className="info-section">
-                        <h1>Details</h1>
-                        <div className="video-upload-preview">
-                            <video controls>
-                                <source src={this.state.videoUrl}/>
-                                There was a problem rendering the video
-                            </video>
-                            <div className="video-upload-details">
-                                <div className="video-preview-link">
-                                    <label>Video Link</label>
-                                    <a>Avaliable after successful upload</a>
-                                </div>
-                                <i className="far fa-copy"></i>
-                            </div>
-                            <div className="video-prev-filename">
-                                <div>
-                                    <label>Filename</label>
-                                    <p>{file}</p>
-                                </div>
-                            </div>
+                    <div className="video-form-container">
+                        <div className="video-form-header">
+                            <h2>{this.state.title}</h2>
+                            <IoIcons.IoMdClose className="crossIcon" onClick={this.props.closeModal} />
                         </div>
-                    </div>
-                    <footer>
-                        <div>
-                            <i className="fab fa-js-sqaure"></i>
-                            <p>Finished Processing</p>
+                        <hr />
+                        <div className="info-section">
+                            <h1>Details</h1>
+                            <div>
+                                <form onSubmit={this.handleSubmit}>
+                                    <input type="text" onChange={this.handleInput("title")} value={this.state.title} placeholder="Add a title that describes your video"/>
+                                    <label>Title (required)</label>
+                                <input type="text" onChange={this.handleInput("description")} value={this.state.description} placeholder="Tell viewers about your video" />
+                                <label>Description </label>
+                                </form>
+                            </div>
+
+                            <div className="video-preview">
+                                <video height="170" width="303" controls>
+                                    <source src={this.state.videoUrl} />
+                                </video>
+                            </div>
+
+                            <div className="filename-container">
+                                <label>Filename</label>
+                                <p>{file}</p>
+                            </div>
                         </div>
                         <button id="video-submit-bttn" onClick={this.handleSubmit}>{this.props.formType}</button>
-                    </footer>
+                    </div>
                 </>
            ) 
         } else {
@@ -163,7 +159,7 @@ class UploadForm extends React.Component {
                                 onDragEnter={this.handleDragEnter}
                                 onDragOver={this.handleDragOver} >
                                 <label>
-                                    <input className="upload-icon-input" type="file" onClick={this.handleFile} />
+                                    <input className="upload-icon-input" type="file" accept="video/*" onClick={this.handleFile} />
                                     <MdIcons.MdFileUpload className="upload-icon" />
                                 </label>
                                 <p className="top-text">Drag and drop video files to upload</p>
