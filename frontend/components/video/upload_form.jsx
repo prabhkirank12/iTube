@@ -148,35 +148,28 @@ class UploadForm extends React.Component {
            ) 
         } else {
                 return (
-                        <div className="modal-div">
-                            <div className="form -title">
-                                <p className="form-header"> Upload Videos</p>
-                                <IoIcons.IoMdClose className="cross-icon" onClick={this.props.closeModal} />
-                            </div>
-                            <hr />
-                            <div className="upload-file"
-                                onDrop={this.handleDrop}
-                                onDragEnter={this.handleDragEnter}
-                                onDragOver={this.handleDragOver} >
-                                <label>
-                                    <input className="upload-icon-input" type="file" accept="video/*" onClick={this.handleFile} />
-                                    <MdIcons.MdFileUpload className="upload-icon" />
-                                </label>
-                                <p className="top-text">Drag and drop video files to upload</p>
-                                <p className="bttm-text">Your videos will be private until you publish them.</p>
-                                {/* <label className="select-label"> 
-                                <input className="select-bttn-input" type="file" 
-                                accept=".mkv, .webm, .flv, .vob, .mng, .avi, .wmv, .qt, .mp4, .mpg, .m4v"
-                                onChange={this.handleFile} />
-                                {/* <button onClick={this.handleSubmit} className="select-bttn">Select Files</button> */}
-                                {/* </label> */}
-                                <label>
-                                    <input type="file" onChange={this.handleFile} />
-                                    <span id="select-label">SELECT FILES</span>
-                                </label>
-                                {/* <button className="select-bttn" onClick={this.handleSubmit}>Submit</button> */}
-                            </div>
-                        </div >
+                    <div className="modal-div">
+                        <div className="form -title">
+                            <p className="form-header"> Upload Videos</p>
+                            <IoIcons.IoMdClose className="cross-icon" onClick={this.props.closeModal} />
+                        </div>
+                        <hr />
+                        <div className="upload-file"
+                            onDrop={this.handleDrop}
+                            onDragEnter={this.handleDragEnter}
+                            onDragOver={this.handleDragOver} >
+                            <label>
+                                <input className="upload-icon-input" type="file" accept="video/*" onClick={this.handleFile} />
+                                <MdIcons.MdFileUpload className="upload-icon" />
+                            </label>
+                            <p className="top-text">Drag and drop video files to upload</p>
+                            <p className="bttm-text">Your videos will be private until you publish them.</p>
+                            <label>
+                                <input type="file" onChange={this.handleFile} />
+                                <span id="select-label">SELECT FILES</span>
+                            </label>
+                        </div>
+                    </div >
 
                 )
             }
