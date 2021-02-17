@@ -141,10 +141,11 @@
     }
 }
 
-.info-section {
-    > h1 {
-        justify-content: start;
-        font-weight: 500;
-        font-size: 18px;
-    }
+.details-heading {
+    display: flex;
+    justify-content: flex-start;
+    font-weight: 600;
+    font-size: 18px;
+    margin-left: 40px;
+    margin-top: 15px;
 }

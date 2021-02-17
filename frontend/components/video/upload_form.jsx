@@ -121,7 +121,7 @@ class UploadForm extends React.Component {
                         </div>
                         <hr />
                         <div className="info-section">
-                            <h1>Details</h1>
+                            <h1 className="details-heading">Details</h1>
                             <div>
                                 <form onSubmit={this.handleSubmit}>
                                     <input type="text" onChange={this.handleInput("title")} value={this.state.title} placeholder="Add a title that describes your video"/>
