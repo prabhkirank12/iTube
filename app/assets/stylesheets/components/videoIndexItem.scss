@@ -19,6 +19,19 @@
     margin: 5px;
 }
 
+.cross-icon {
+    color: #949494;
+    font-size: 30px;
+    padding: 20px 15px 15px 0px;
+    cursor: pointer;
+}
+
+.crossIcon:hover{
+    color: #222222;
+}
+
+// Upload form container
+
 .modal-div {
   background: white;
   z-index: 10;
@@ -37,17 +50,6 @@
     padding: 20px 0px 15px 20px;
     font-size: 20px;
     font-weight: 500;
-}
-
-.cross-icon {
-    color: #949494;
-    font-size: 30px;
-    padding: 20px 15px 15px 0px;
-    cursor: pointer;
-}
-
-.crossIcon:hover{
-    color: #222222;
 }
 
 .upload-icon{
@@ -78,36 +80,37 @@
     color: #737373;
     margin-top:6px;
     font-size: 13px;
+    margin-bottom: 40px;
 }
 
-.select-bttn-input{
+.select-label {
+    // margin-top: 95px;
+    display: block;
+    background-color: rgb(0, 89, 255);
+    color: white;
+    padding: 10px 18px;
+    font-size: 14px;
+    border-radius: 3px;
+    // margin-bottom: 93px;
+}
+
+.select-label:hover {
+    cursor: pointer;
+}
+
+.select-input {
     display: none;
-    background-color: transparent;
 }
-
-.select-label{
-    padding: 0;
-    background-color: transparent;
-}
-
-.select-bttn{
-    background-color: #085ED4;
-    color: white;
-    padding-top: 0;
-    margin-top: 65px;
-    box-sizing: border-box;
-    padding: 4px;
-}
-.video-data{
+.video-data {
     color: white;
 }
 
-.video-title{
+.video-title {
     float: left;
     margin-left: 5px;
 }
 
-.video-title > p{
+.video-title > p {
     font-size: 12px;
 }
 

@@ -149,7 +149,7 @@ class UploadForm extends React.Component {
         } else {
                 return (
                     <div className="modal-div">
-                        <div className="form -title">
+                        <div className="form-title">
                             <p className="form-header"> Upload Videos</p>
                             <IoIcons.IoMdClose className="cross-icon" onClick={this.props.closeModal} />
                         </div>
@@ -165,8 +165,8 @@ class UploadForm extends React.Component {
                             <p className="top-text">Drag and drop video files to upload</p>
                             <p className="bttm-text">Your videos will be private until you publish them.</p>
                             <label>
-                                <input type="file" onChange={this.handleFile} />
-                                <span id="select-label">SELECT FILES</span>
+                                <input className="select-input" type="file" onChange={this.handleFile} />
+                                <span className="select-label">SELECT FILE</span>
                             </label>
                         </div>
                     </div >
