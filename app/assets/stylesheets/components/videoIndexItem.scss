@@ -135,7 +135,6 @@
 
 .info-section {
     display: flex;
-    border: 2px solid red;
     margin-left: 40px;
     margin-right: 40px;
 }
@@ -154,20 +153,23 @@
     justify-content: flex-start;
     font-weight: 600;
     font-size: 18px;
-    // margin-left: 40px;
     margin-top: 15px;
 }
 
 .video-preview-form {
     margin-top: 45px;
     margin-left: -58px;
-    > input[type="text"] {
-        // margin-left: 40px;
+    > .title-preview {
+        height: 65px;
     }
 
+    > .description-preview {
+        height: 130px;
+    }
     > .preview-label {
-        display: flex;
-        transition: none;
+        top: 0;
+        left: 0;
+        
     }
 }
 
@@ -178,9 +180,24 @@
         border-radius: 3px 3px 0px 0px;
     }
     > .filename-container {
-        width: 303px;
-        background-color: #989899;
+        width: 236px;
+        height: 90px;
+        background-color: #ECEEEF;
         margin-top: -5px;
         border-radius: 0px 0px 3px 3px;
+        text-align: start;
+
+        > .filename-text {
+            color: gray;
+            font-size: 12px;
+            padding-top: 15px;
+            padding-left: 6px;
+            padding-bottom: 2px;
+        }
+
+        > .filename-title {
+            font-size: 14px;
+            padding-left: 6px;
+        }
     }
 }

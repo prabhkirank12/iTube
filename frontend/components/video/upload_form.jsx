@@ -124,21 +124,21 @@ class UploadForm extends React.Component {
                             <h1 className="details-heading">Details</h1>
                             <div>
                                 <form className="video-preview-form" onSubmit={this.handleSubmit}>
-                                    <input type="text" onChange={this.handleInput("title")} value={this.state.title} placeholder="Add a title that describes your video"/>
-                                    <label className="preview-label">Title (required)</label>
-                                    <input type="text" onChange={this.handleInput("description")} value={this.state.description} placeholder="Tell viewers about your video" />
-                                   <label className="preview-label">Description </label>
+                                    <input className="title-preview" type="text" onChange={this.handleInput("title")} value={this.state.title} placeholder="Add a title that describes your video"/>
+                                    <label className="title-label">Title (required)</label>
+                                    <input className="description-preview" type="text" onChange={this.handleInput("description")} value={this.state.description} placeholder="Tell viewers about your video" />
+                                   <label className="desc-label">Description </label>
                                 </form>
                             </div>
 
                             <div className="video-preview">
-                                <video className="preview-video" height="170" width="303" controls>
+                                <video className="preview-video" height="133" width="236" controls>
                                     <source src={this.state.videoUrl} />
                                 </video>
 
                                 <div className="filename-container">
-                                    <p>Filename</p>
-                                    <p>{file}</p>
+                                    <p className="filename-text">Filename</p>
+                                    <p className="filename-title">{file}</p>
                                 </div>
                             </div>
                         </div>
