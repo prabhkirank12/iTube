@@ -132,6 +132,13 @@
 
 // video preview container
 
+.info-section {
+    display: flex;
+    border: 2px solid red;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
 .video-form-header {
     display: flex;
     justify-content: space-between;
@@ -146,6 +153,20 @@
     justify-content: flex-start;
     font-weight: 600;
     font-size: 18px;
-    margin-left: 40px;
+    // margin-left: 40px;
     margin-top: 15px;
+}
+
+.video-preview-form {
+    border: 1px solid green;
+    margin-top: 30px;
+    margin-left: -50px;
+    > input[type="text"] {
+        // margin-left: 40px;
+    }
+
+    > .preview-label {
+        display: flex;
+        transition: none;
+    }
 }

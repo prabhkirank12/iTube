@@ -123,11 +123,11 @@ class UploadForm extends React.Component {
                         <div className="info-section">
                             <h1 className="details-heading">Details</h1>
                             <div>
-                                <form onSubmit={this.handleSubmit}>
+                                <form className="video-preview-form" onSubmit={this.handleSubmit}>
                                     <input type="text" onChange={this.handleInput("title")} value={this.state.title} placeholder="Add a title that describes your video"/>
-                                    <label>Title (required)</label>
-                                <input type="text" onChange={this.handleInput("description")} value={this.state.description} placeholder="Tell viewers about your video" />
-                                <label>Description </label>
+                                    <label className="preview-label">Title (required)</label>
+                                    <input type="text" onChange={this.handleInput("description")} value={this.state.description} placeholder="Tell viewers about your video" />
+                                   <label className="preview-label">Description </label>
                                 </form>
                             </div>
 
@@ -135,12 +135,13 @@ class UploadForm extends React.Component {
                                 <video height="170" width="303" controls>
                                     <source src={this.state.videoUrl} />
                                 </video>
+
+                                <div className="filename-container">
+                                    <label>Filename</label>
+                                    <p>{file}</p>
+                                </div>
                             </div>
 
-                            <div className="filename-container">
-                                <label>Filename</label>
-                                <p>{file}</p>
-                            </div>
                         </div>
                         <button id="video-submit-bttn" onClick={this.handleSubmit}>{this.props.formType}</button>
                     </div>
