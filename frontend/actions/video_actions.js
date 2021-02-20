@@ -58,7 +58,7 @@ export const deleteVideo = videoId => dispatch => (
         .then(() => dispatch(removeVideo(videoId)), err => receiveErrors(err))
 )
 
-export const updatVideo = video => dispatch (
+export const updateVideo = video => dispatch (
     VideoUtil.updateVideo(video)
         .then(video => dispatch(receiveVideo(video)), err => receiveErrors(err))
 )

@@ -13,12 +13,20 @@ class VideoShow extends React.Component {
         this.handleDislikeVideo = this.handleDislikeVideo.bind(this);
         this.handleUndislikeVideo = this.handleUndislikeVideo.bind(this);
         this.handleChangeLikeVideo = this.handleChangeLikeVideo.bind(this);
+        this.handleLikeChange = this.handleLikeChange.bind(this);
         this.handleRedirectToLogin = this.handleRedirectToLogin.bind(this);
+        this.handleDeleteVideo = this.handleDeleteVideo.bind(this);
     }
 
     componentDidMount(){
         this.props.fetchVideo(this.props.video.id);
         this.props.fetchVideos();
+    }
+
+    componentDidUpdate(){
+        if (document.getElementById("like-bttn") && document.getElementById("dislike-bttn")) {
+            this.handleLikeChange();
+        }
     }
 
 
@@ -68,21 +76,48 @@ class VideoShow extends React.Component {
         this.props.changeLikeVideo(this.props.video.id);
     }
 
+    handleDeleteVideo(){
+        this.props.removeVideo(this.props.video.id);
+        this.props.history.push('/');
+    }
+
+    handleLikeChange(){
+        let likeBttn = document.getElementById("like-bttn");
+        let dislikeBttn = document.getElementById("dislike-bttn");
+        let likeBar = document.getElementById("like-bar");
+
+        if(this.props.video.likerIds.includes(this.props.currentUser.id)){
+            likeBttn.classList.add("like-selected");
+            dislikeBttn.classList.remove("like-selected");
+            likeBar.classList.add("like-selected");
+        } else if (this.props.video.dislikerIds.includes(this.props.currentUser.id)) {
+            likeBttn.classList.remove("like-selected");
+            dislikeBttn.classList.add("like-selected");
+            likeBar.classList.add("like-selected");
+        } else {
+            likeBttn.classList.remove("like-selected");
+            dislikeBttn.classList.remove("like-selected");
+            likeBar.classList.remove("like-selected");
+        }
+    }
+
     render() {
-        let likeBtn = '';
-        let dislikeBtn = '';
+
+        //setting the like and dislike buttons
+        let likeBttn = '';
+        let dislikeBttn = '';
         if(!this.props.currentUser){
-            likeBtn = <button onClick={this.handleRedirectToLogin} id="like-btn"><IoIcons.IoMdThumbsUp />{this.props.video.likerIds.length}</button>
-            dislikeBtn = <button onClick={this.handleRedirectToLogin} id="like-btn"><IoIcons.IoMdThumbsDown />{this.props.video.dislikerIds.length}</button>
+            likeBttn = <button onClick={this.handleRedirectToLogin} id="like-bttn"><IoIcons.IoMdThumbsUp />{this.props.video.likerIds.length}</button>
+            dislikeBttn = <button onClick={this.handleRedirectToLogin} id="like-bttn"><IoIcons.IoMdThumbsDown />{this.props.video.dislikerIds.length}</button>
         }else if(this.props.video.likerIds.includes(this.props.currentUser.id)){
-            likeBtn = <button onClick={this.handleUnlikeVideo} id="like-btn"><IoIcons.IoMdThumbsUp />{this.props.video.likerIds.length}</button>
-            dislikeBtn = <button onClick={this.handleChangeLikeVideo} id="like-btn"><IoIcons.IoMdThumbsDown />{this.props.video.dislikerIds.length}</button>
+            likeBttn = <button onClick={this.handleUnlikeVideo} id="like-bttn"><IoIcons.IoMdThumbsUp />{this.props.video.likerIds.length}</button>
+            dislikeBttn = <button onClick={this.handleChangeLikeVideo} id="like-bttn"><IoIcons.IoMdThumbsDown />{this.props.video.dislikerIds.length}</button>
         } else if (this.props.video.likerIds.includes(this.props.currentUser.id)) {
-            likeBtn = <button onClick={this.handleChangeLikeVideo} id="like-btn"><IoIcons.IoMdThumbsUp />{this.props.video.likerIds.length}</button>
-            dislikeBtn = <button onClick={this.handleUndislikeVideo} id="like-btn"><IoIcons.IoMdThumbsDown />{this.props.video.dislikerIds.length}</button>
+            likeBttn = <button onClick={this.handleChangeLikeVideo} id="like-bttn"><IoIcons.IoMdThumbsUp />{this.props.video.likerIds.length}</button>
+            dislikeBttn = <button onClick={this.handleUndislikeVideo} id="like-bttn"><IoIcons.IoMdThumbsDown />{this.props.video.dislikerIds.length}</button>
         }else{
-            likeBtn = <button onClick={this.handleLikeVideo} id="like-btn"><IoIcons.IoMdThumbsUp />{this.props.video.likerIds.length}</button>
-            dislikeBtn = <button onClick={this.handleDislikeVideo} id="like-btn"><IoIcons.IoMdThumbsDown />{this.props.video.dislikerIds.length}</button>  
+            likeBttn = <button onClick={this.handleLikeVideo} id="like-bttn"><IoIcons.IoMdThumbsUp />{this.props.video.likerIds.length}</button>
+            dislikeBttn = <button onClick={this.handleDislikeVideo} id="like-bttn"><IoIcons.IoMdThumbsDown />{this.props.video.dislikerIds.length}</button>  
         }
 
         let likeBarStyle = '';
@@ -96,6 +131,15 @@ class VideoShow extends React.Component {
             }
         }
 
+        //setting the edit and remove button for current user
+        let videoUploader = (this.props.video.uploader_id === this.props.currentUser.id)
+        let editDeleteBttn = '';
+        if (videoUploader) {
+            editDeleteBttn = <div id="video-options-bttns">
+                <button onClick={this.props.openEditModal} id="edit-bttn">EDIT</button>
+                <button onClick={this.handleDeleteVideo} id="delete-bttn">REMOVE</button>
+            </div>
+        }
         if (this.props.video){
             let videos = Object.values(this.props.videos).map(video => {
                 return (
@@ -124,8 +168,9 @@ class VideoShow extends React.Component {
                             <p>
                                 {formatDate(this.props.video.created_at)}
                             </p>
-                            {likeBtn}
-                            {dislikeBtn}
+                            {likeBttn}
+                            {dislikeBttn}
+                            {editDeleteBttn}
                             <button> <IoIcons.IoIosShareAlt /> Share </button>
                         </div>
 

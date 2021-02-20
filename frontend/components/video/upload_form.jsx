@@ -79,9 +79,10 @@ class UploadForm extends React.Component {
     }
 
     handleEdit(){
-        let parts = this.props.location.pathname.split('/');
-        let currentVideoId = parts.pop();
-        let currentVideo = this.props.videos[currentVideoId];
+        // console.log(this.props.location.pathname)
+        // let parts = this.props.location.pathname.split('/');
+        // let currentVideoId = parts.pop();
+        let currentVideo = this.props.videos[video.id];
         this.setState({ title: currentVideo.title, body: currentVideo.body, videoUrl: currentVideo.videoUrl})
     }
     

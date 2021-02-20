@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { closeModal } from '../../actions/modal_actions';
 import { updateVideo } from '../../actions/video_actions';
 import uploadVideoForm from './upload_form';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -18,4 +19,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(uploadVideoForm);
+export default withRouter(mapStateToProps, mapDispatchToProps)(uploadVideoForm);

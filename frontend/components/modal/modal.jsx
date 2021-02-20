@@ -2,7 +2,9 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
+
 import UploadVideoFormContainer from '../video/upload_form_container';
+import EditVideoFormContainer from '../video/edit_form_container';
 
 function Modal({ modal, closeModal }) {
     if (!modal) {
@@ -12,6 +14,9 @@ function Modal({ modal, closeModal }) {
     switch (modal) {
         case 'upload':
             component = <UploadVideoFormContainer />;
+            break;
+        case 'edit':
+            component = <EditVideoFormContainer />;
             break;
         default:
             return null;
