@@ -76,6 +76,7 @@ class VideoShow extends React.Component {
         this.props.changeLikeVideo(this.props.video.id);
     }
 
+    //allows the uploader to delete their video
     handleDeleteVideo(){
         this.props.removeVideo(this.props.video.id);
         this.props.history.push('/');
@@ -187,8 +188,7 @@ class VideoShow extends React.Component {
                    <div className="all-videos">
                         {videos}
                    </div>
-               </div>
-               
+               </div>   
            )
        }else{
            return(
