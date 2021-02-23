@@ -15,6 +15,39 @@
     font-size: 16px;
 }
 
+#like-show-buttons > .like-selected {
+    color: rgb(0, 89, 255);
+}
+
+
+#like-dislike-bar-container {
+    position: absolute;
+    top: 26px;
+    left: 525px;
+    display: flex;
+    height: 2px;
+    width: 150px;
+}
+
+#like-bar {
+    width: 50%;
+    height: 100%;
+    background-color: gray;
+    transition: all .5s ease 0s;
+}
+
+#like-bar.like-selected {
+    background-color: rgb(0, 89, 255);
+    transition: all .5s ease 0s;
+}
+
+#dislike-bar {
+    width: 50%;
+    height: 100%;
+    background-color: lightgrey;
+    transition: all .5s ease 0s;
+}
+
 .video-show {
     margin-top: 20px;
     padding: 0px;

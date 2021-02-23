@@ -29,7 +29,7 @@ class VideoShow extends React.Component {
         }
     }
 
-
+    //gets the total number of likes on a video
     getLikeProportion(){
         let numLikes = this.props.video.likerIds.length;
         let totalNum = this.props.video.likerIds.length + this.props.video.dislikerIds.length;
@@ -41,6 +41,7 @@ class VideoShow extends React.Component {
         }
     }
 
+    //gets the total number of dislikes on a video
     getDislikeProportion() {
         let numDislikes = this.props.video.dislikerIds.length;
         let totalNum = this.props.video.likerIds.length + this.props.video.dislikerIds.length;
@@ -113,7 +114,7 @@ class VideoShow extends React.Component {
         }else if(this.props.video.likerIds.includes(this.props.currentUser.id)){
             likeBttn = <button onClick={this.handleUnlikeVideo} id="like-bttn"><IoIcons.IoMdThumbsUp />{this.props.video.likerIds.length}</button>
             dislikeBttn = <button onClick={this.handleChangeLikeVideo} id="like-bttn"><IoIcons.IoMdThumbsDown />{this.props.video.dislikerIds.length}</button>
-        } else if (this.props.video.likerIds.includes(this.props.currentUser.id)) {
+        } else if (this.props.video.dislikerIds.includes(this.props.currentUser.id)) {
             likeBttn = <button onClick={this.handleChangeLikeVideo} id="like-bttn"><IoIcons.IoMdThumbsUp />{this.props.video.likerIds.length}</button>
             dislikeBttn = <button onClick={this.handleUndislikeVideo} id="like-bttn"><IoIcons.IoMdThumbsDown />{this.props.video.dislikerIds.length}</button>
         }else{
