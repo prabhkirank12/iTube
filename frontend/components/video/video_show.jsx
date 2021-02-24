@@ -110,16 +110,16 @@ class VideoShow extends React.Component {
         let dislikeBttn = '';
         if(!this.props.currentUser){
             likeBttn = <button onClick={this.handleRedirectToLogin} id="like-bttn"><IoIcons.IoMdThumbsUp />{this.props.video.likerIds.length}</button>
-            dislikeBttn = <button onClick={this.handleRedirectToLogin} id="like-bttn"><IoIcons.IoMdThumbsDown />{this.props.video.dislikerIds.length}</button>
+            dislikeBttn = <button onClick={this.handleRedirectToLogin} id="dislike-bttn"><IoIcons.IoMdThumbsDown />{this.props.video.dislikerIds.length}</button>
         }else if(this.props.video.likerIds.includes(this.props.currentUser.id)){
             likeBttn = <button onClick={this.handleUnlikeVideo} id="like-bttn"><IoIcons.IoMdThumbsUp />{this.props.video.likerIds.length}</button>
-            dislikeBttn = <button onClick={this.handleChangeLikeVideo} id="like-bttn"><IoIcons.IoMdThumbsDown />{this.props.video.dislikerIds.length}</button>
+            dislikeBttn = <button onClick={this.handleChangeLikeVideo} id="dislike-bttn"><IoIcons.IoMdThumbsDown />{this.props.video.dislikerIds.length}</button>
         } else if (this.props.video.dislikerIds.includes(this.props.currentUser.id)) {
             likeBttn = <button onClick={this.handleChangeLikeVideo} id="like-bttn"><IoIcons.IoMdThumbsUp />{this.props.video.likerIds.length}</button>
-            dislikeBttn = <button onClick={this.handleUndislikeVideo} id="like-bttn"><IoIcons.IoMdThumbsDown />{this.props.video.dislikerIds.length}</button>
+            dislikeBttn = <button onClick={this.handleUndislikeVideo} id="dislike-bttn"><IoIcons.IoMdThumbsDown />{this.props.video.dislikerIds.length}</button>
         }else{
             likeBttn = <button onClick={this.handleLikeVideo} id="like-bttn"><IoIcons.IoMdThumbsUp />{this.props.video.likerIds.length}</button>
-            dislikeBttn = <button onClick={this.handleDislikeVideo} id="like-bttn"><IoIcons.IoMdThumbsDown />{this.props.video.dislikerIds.length}</button>  
+            dislikeBttn = <button onClick={this.handleDislikeVideo} id="dislike-bttn"><IoIcons.IoMdThumbsDown />{this.props.video.dislikerIds.length}</button>  
         }
 
         let likeBarStyle = '';

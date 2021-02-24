@@ -15,10 +15,13 @@
     font-size: 16px;
 }
 
-#like-show-buttons > .like-selected {
+#like-show-buttons button.like-selected {
     color: rgb(0, 89, 255);
 }
 
+#video-show-button:active {
+    border-color: rgb(0, 89, 255);
+}
 
 #like-dislike-bar-container {
     position: absolute;
