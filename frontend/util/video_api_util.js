@@ -26,11 +26,11 @@ export const createVideo = (video) => {
     })
 }
 
-//updates an existing video inn the db
+//updates an existing video in the db
 export const updateVideo = (video) => {
     return $.ajax({
         method: 'PATCH',
-        url: '/api/videos/${video.id}',
+        url: `/api/videos/${video.id}`,
         data: { video }
     })
 }

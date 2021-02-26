@@ -5,9 +5,10 @@ import uploadVideoForm from './upload_form';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
+    // debugger;
     return {
         errors: state.errors.videos,
-        video: state.entities.videos[ownProps.videoId],
+        videos: state.entities.videos,
         formType: "edit"
     };
 };
@@ -19,4 +20,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default withRouter(mapStateToProps, mapDispatchToProps)(uploadVideoForm);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(uploadVideoForm));
