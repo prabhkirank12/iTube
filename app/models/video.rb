@@ -5,6 +5,8 @@ class Video < ApplicationRecord
     
     has_many :likes, as: :likeable, dependent: :destroy
 
+    has_many :comments, dependent: :destroy
+
     belongs_to :uploader,
         primary_key: :id,
         foreign_key: :uploader_id,

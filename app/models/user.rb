@@ -13,6 +13,11 @@ class User < ApplicationRecord
         primary_key: :id,
         foreign_key: :liker_id,
         class_name: :Like
+
+    has_many :comments,
+        primary_key: :id,
+        foreign_key: :commenter_id,
+        class_name: :Comment
     
     attr_reader :password
     after_initialize :ensure_session_token
