@@ -186,9 +186,9 @@ class VideoShow extends React.Component {
 
                    </div>
 
-                   <div className="all-videos">
+                   {/* <div className="all-videos">
                         {videos}
-                   </div>
+                   </div> */}
                </div>   
            )
        }else{
