@@ -61,7 +61,6 @@ class CommentIndex extends React.Component {
         comments = comments.map(comment => {
             if(comment.parentId === null) return <CommentIndexItemContainer key={comment.id} repliesIds={comment.repliesIds} comment={comment} />
         })
-        console.log(comments);
 
         return (
             <div className="comment-index-container">

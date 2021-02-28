@@ -18,6 +18,10 @@ class SessionForm extends React.Component {
         this.submitBttn = this.submitBttn.bind(this);
     }
 
+    componentDidMount(){
+        this.props.clearErrors();
+    }
+
     update(field) {
         return e => this.setState({
             [field]: e.currentTarget.value
@@ -30,17 +34,10 @@ class SessionForm extends React.Component {
         this.props.processForm(user);
     }
 
-    renderErrors() {
-        return (
-            <ul>
-                {/* {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>
-                        {error}
-                    </li>
-                ))} */}
-                {this.props.errors}
-            </ul>
-        );
+    renderErrors(field) {
+        const { errors, match } = this.props;
+        const error = errors[0];
+        console.log(error);
     }
 
     buttonText() {
