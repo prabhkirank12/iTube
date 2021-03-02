@@ -49,6 +49,7 @@ class CommentIndex extends React.Component {
 
         // displays all the comments and sorted by old or new
         let comments = Object.values(this.props.comments)
+        // console.log(comments);
         // debugger;
         let sortBy = 'SORT BY: Oldest';
 
@@ -60,6 +61,7 @@ class CommentIndex extends React.Component {
         comments = comments.map(comment => {
             if(comment.parentId === null) return <CommentIndexItemContainer key={comment.id} repliesIds={comment.repliesIds} comment={comment} />
         })
+        console.log(comments);
 
         return (
             <div className="comment-index-container">

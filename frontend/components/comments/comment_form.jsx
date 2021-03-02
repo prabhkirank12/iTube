@@ -17,33 +17,13 @@ class CommentForm extends React.Component {
         this.hideButtons = this.hideButtons.bind(this);
         this.showButtons = this.showButtons.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleCancelEdit = this.handleCancelEdit.bind(this);
     }
 
     componentDidMount() {
         if (this.props.formType === 'edit') this.handleEnterEdit();
     }
 
-    componentDidUpdate() {
-        if (this.props.videoId) {
-            let submitBttn = document.getElementById("comment-submit-bttn");
-            if (submitBttn) {
-                if(this.state.content.length === 0){
-                    submitBttn.setAttribute('disabled', '');
-                } else {
-                    submitBttn.removeAttribute('disabled', '');
-                }
-            }
-        } else {
-            let submitBttn = document.getElementById(`comment-submit-bttn-${this.props.parentId}`);
-            if (submitBttn) {
-                if(this.state.content.length === 0){
-                    submitBttn.setAttribute('disabled', '');
-                } else {
-                    submitBttn.removeAttribute('disabled', '');
-                }
-            }
-        }
-    }
 
     redirectToLogin() {
         this.props.history.push("/login");
@@ -156,12 +136,11 @@ class CommentForm extends React.Component {
             return (
                 <div id="comment-container" className="inline-comment-bttn">
                     <div id="comment-input-icon">
-                        {commenter}
                         <div>
                             <input type="text" className="inline-comment" onChange={this.handleInputChange} value={this.state.content} placeholder="Add a public comment..." required/>
                         </div>
                     </div>
-                    {bttnDiv}
+                    {buttonDiv}
                 </div>
             )
         }

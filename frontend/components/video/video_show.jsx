@@ -3,7 +3,7 @@ import { Link, withRouter} from 'react-router-dom';
 import * as IoIcons from 'react-icons/io';
 import NavBar from '../../components/nav_bar/nav_bar_container';
 import { formatDate } from '../../util/format_date_util';
-import VideoNext from './video_next';
+// import VideoNext from './video_next';
 import CommentIndexContainer  from '../comments/comment_index_container';
 class VideoShow extends React.Component {
     constructor(props){
