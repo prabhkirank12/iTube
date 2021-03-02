@@ -89,11 +89,11 @@ class VideoShow extends React.Component {
         let dislikeBttn = document.getElementById("dislike-bttn");
         let likeBar = document.getElementById("like-bar");
 
-        if(this.props.video.likerIds.includes(this.props.currentUser.id)){
+        if(this.props.currentUser && (this.props.video.likerIds.includes(this.props.currentUser.id))){
             likeBttn.classList.add("like-selected");
             dislikeBttn.classList.remove("like-selected");
             likeBar.classList.add("like-selected");
-        } else if (this.props.video.dislikerIds.includes(this.props.currentUser.id)) {
+        } else if (this.props.currentUser && (this.props.video.dislikerIds.includes(this.props.currentUser.id))) {
             likeBttn.classList.remove("like-selected");
             dislikeBttn.classList.add("like-selected");
             likeBar.classList.add("like-selected");
@@ -137,7 +137,7 @@ class VideoShow extends React.Component {
         }
 
         //setting the edit and remove button for current user
-        let videoUploader = (this.props.video.uploader_id === this.props.currentUser.id)
+        let videoUploader = this.props.currentUser && (this.props.video.uploader_id === this.props.currentUser.id);
         let editDeleteBttn = '';
         if (videoUploader) {
             editDeleteBttn = <div id="video-options-bttns">

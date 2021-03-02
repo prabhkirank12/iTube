@@ -20,9 +20,4 @@ class Video < ApplicationRecord
     def dislikers
         self.likes.where(liked_value: -1).select(:liker_id).map{|ele| ele.liker_id}  
     end
-
-    def self.query_videos(search_params)
-        videos = Video.joins(:uploader).where("title ILIKE ? OR description ILIKE ?", "%#{search_params}%", "%#{search_params}%" ).group(:id)
-        videos
-    end
 end

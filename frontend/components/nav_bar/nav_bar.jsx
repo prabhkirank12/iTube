@@ -21,8 +21,6 @@ class NavBar extends React.Component{
         // this.moreIcon = this.moreIcon.bind(this);
         this.showSigninDemo = this.showSigninDemo.bind(this);
         this.upload = this.upload.bind(this);
-        this.handleSearch = this.handleSearch.bind(this);
-        this.handleSearchInput = this.handleSearchInput.bind(this);
     }
 
     handleDemoSubmit(){
@@ -89,17 +87,6 @@ class NavBar extends React.Component{
         }
     }
     
-    handleSearchInput(e) {
-        this.setState({
-            searchQuery: e.currentTarget.value
-        })
-    }
-
-    handleSearch(e) {
-        e.preventDefault();
-        this.props.history.push(`/results?search_query=${this.state.searchQuery}`)
-    }
-    
     render (){
         const sideBarSignin = (!this.props.currentUser ? 
                     <Link className="home2" to="/login"> <BsIcons.BsFillPersonFill className="humanIcon" /> Sign in</Link>
@@ -112,10 +99,10 @@ class NavBar extends React.Component{
                         <button className="menu-bars" onClick={this.showSidebar}> <FaIcons.FaBars/></button>
                         <Link className="logo" to="/"><img src={window.logoUrl} alt="logo" /></Link>
                     </div>
-                    <form className="center-navbar" onSubmit={this.handleSearch}>
-                        <input type="text" className="search-bar" placeholder="Search" onChange={this.handleSearchInput}/>
+                    <div className="center-navbar">
+                        <input type="text" className="search-bar" placeholder="Search" />
                         <AiIcons.AiOutlineSearch className="search-icon"/>
-                    </form>
+                    </div>
                     <div className="right-navbar">
                         <button className="other-icon" onClick={this.upload}><RiIcons.RiVideoAddLine /></button>
                         {/* <button className="other-icon">{this.moreIcon()}</button> */}
