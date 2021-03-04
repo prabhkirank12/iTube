@@ -1,6 +1,5 @@
 import * as VideoUtil from "../util/video_api_util";
 import * as LikeUtil from "../util/like_api_util";
-import { BsAppIndicator } from "react-icons/bs";
 
 export const RECEIVE_LIKED_VIDEOS = "RECEIVE_LIKED_VIDEOS";
 export const RECEIVE_VIDEO = "RECEIVE_VIDEO";
@@ -58,7 +57,7 @@ export const deleteVideo = videoId => dispatch => (
         .then(() => dispatch(removeVideo(videoId)), err => receiveErrors(err))
 )
 
-export const updateVideo = video => dispatch (
+export const updateVideo = video => dispatch => (
     VideoUtil.updateVideo(video)
         .then(video => dispatch(receiveVideo(video)), err => receiveErrors(err))
 )

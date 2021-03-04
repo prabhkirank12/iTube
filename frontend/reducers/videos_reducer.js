@@ -5,8 +5,6 @@ import {
     REMOVE_VIDEO
 } from '../actions/video_actions';
 
-
-
 const videosReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState = {...state};
