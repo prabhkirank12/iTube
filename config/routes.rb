@@ -11,6 +11,18 @@ Rails.application.routes.draw do
         post :dislike, to: 'videos#dislike', as: 'dislike'
         post :undislike, to: 'videos#undislike', as: 'undislike'
         post :changelike, to: 'videos#change_like', as: 'changelike'
+
+        resources :comments, only: [:index, :create]
     end
+
+  resources :comments, only: [:destroy, :show, :update] do
+     post :like, to: 'comments#like', as: 'like'
+    post :unlike, to: 'comments#unlike', as: 'unlike'
+    post :dislike, to: 'comments#dislike', as: 'dislike'
+    post :undislike, to: 'comments#undislike', as: 'undislike'
+    post :changelike, to: 'comments#change_like', as: 'changelike'
+
+    resources :comments, only: [:index, :create]
+  end
   end
 end

@@ -40,37 +40,37 @@ class Api::CommentsController < ApplicationController
     end
 
     def update
-        @video = Video.find(params[:id])
-
-        if @video.update_attributes(video_params)
+        @comment = Comment.find(params[:id])
+        if @comment && current_user.id == @comment.commenter_id
+            @comment.update(comment_params)
             render :show
         else
-            render json: @vidoe.errors.full_messages, status: 422
+            render json: @comment.errors.full_messages, status: 422
         end
     end
 
     def like 
-        @like = Like.new(liked_value: 1, liker_id: current_user.id, likeable_id: params[:video_id], likeable_type: "Video")
+        @like = Like.new(liked_value: 1, liker_id: current_user.id, likeable_id: params[:comment_id], likeable_type: "Comment")
         if @like.save
-            redirect_to api_video_url(params[:video_id])
+            redirect_to api_comment_url(params[:comment_id])
         else
             render json: @like.errors.full_messages, status: :unprocessable_entity
         end
     end
     
     def unlike 
-        @like = Like.find_by(liked_value: 1, liker_id: current_user.id, likeable_id: params[:video_id], likeable_type: "Video")
+        @like = Like.find_by(liked_value: 1, liker_id: current_user.id, likeable_id: params[:comment_id], likeable_type: "Comment")
         if @like.destroy
-            redirect_to api_video_url(params[:video_id])
+            redirect_to api_comment_url(params[:comment_id])
         else
             render json: @like.errors.full_messages, status: :unprocessable_entity
         end
     end
 
     def dislike 
-        @like = Like.new(liked_value: -1, liker_id: current_user.id, likeable_id: params[:video_id], likeable_type: "Video")
+        @like = Like.new(liked_value: -1, liker_id: current_user.id, likeable_id: params[:comment_id], likeable_type: "Comment")
         if @like.save
-            redirect_to api_video_url(params[:video_id])
+            redirect_to api_comment_url(params[:comment_id])
         else
             render json: @like.errors.full_messages, status: :unprocessable_entity
         end
@@ -78,16 +78,16 @@ class Api::CommentsController < ApplicationController
 
 
     def undislike 
-        @like = Like.find_by(liked_value: -1, liker_id: current_user.id, likeable_id: params[:video_id], likeable_type: "Video")
+        @like = Like.find_by(liked_value: -1, liker_id: current_user.id, likeable_id: params[:comment_id], likeable_type: "Comment")
         if @like.destroy
-            redirect_to api_video_url(params[:video_id])
+            redirect_to api_comment_url(params[:comment_id])
         else
             render json: @like.errors.full_messages, status: :unprocessable_entity
         end
     end
 
     def change_like
-        @like = Like.find_by(liker_id: current_user.id, likeable_id: params[:video_id], likeable_type: "Video")
+        @like = Like.find_by(liker_id: current_user.id, likeable_id: params[:comment_id], likeable_type: "Comment")
         if (@like.liked_value === 1)
             @like.liked_value = -1
         else
@@ -95,14 +95,14 @@ class Api::CommentsController < ApplicationController
         end
 
         if @like.save
-            redirect_to api_video_url(params[:video_id])
+            redirect_to api_comment_url(params[:comment_id])
         else
             render json: @like.errors.full_messages, status: :unprocessable_entity
         end
     end
 
     private
-    def video_params
-        params.require(:video).permit(:title, :description, :video)
+    def comment_params
+        params.require(:comment).permit(:body)
     end
 end

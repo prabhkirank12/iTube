@@ -14,5 +14,21 @@ class Comment < ApplicationRecord
 
     has_many :likes, as: :likeable
 
+    def is_edited?
+        self.created_at != self.updated_at
+    end
+
+    def replies_ids
+        self.replies.map { |el| el.id}
+    end
+
+    def liker_ids
+        self.likes.where(is_like: 1).select(:liker_id).map {|el| el.liker_id}
+    end
+
+    def disliker_ids
+        self.likes.where(is_like: -1).select(:liker_id).map {|el| el.liker_id}
+    end
+
 end
 

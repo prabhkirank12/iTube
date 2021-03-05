@@ -1,0 +1,10 @@
+json.id comment.id
+json.content comment.content
+json.videoId comment.video_id
+json.commenterId comment.commenter_id
+json.createdAt comment.created_at
+json.isEdited comment.is_edited?
+json.likerIds comment.liker_ids
+json.dislikerIds comment.disliker_ids
+json.parentId comment.parent_id
+json.repliesIds comment.replies_ids
