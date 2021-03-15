@@ -37,3 +37,38 @@ export const changeLikeVideo = (videoId) => {
         url: `api/videos/${videoId}/changelike`
     }))
 }
+
+export  const likeComment = (commentId) => {
+    return ($.ajax({
+        method: "POST",
+        url: `api/comments/${commentId}/like`
+    }))
+}
+
+export  const unlikeComment = (commentId) => {
+    return ($.ajax({
+        method: "POST",
+        url: `api/comments/${commentId}/unlike`
+    }))
+}
+
+export const dislikeComment = (commentId) => {
+    return ($.ajax({
+        method: "POST",
+        url: `api/comments/${commentId}/dislike`
+    }))
+}
+
+export const undislikeComment = (commentId) => {
+    return ($.ajax({
+        method: "POST",
+        url: `api/comments/${commentId}/undislike`
+    }))
+}
+
+export const changeLikeComment = (commentId) => {
+    return ($.ajax({
+        method: "POST",
+        url: `api/comments/${commentId}/changelike`
+    }))
+}

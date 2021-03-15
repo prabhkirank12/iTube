@@ -68,7 +68,7 @@ export const createReply = (commentId, comment) => dispatch => (
 )
 
 export const deleteReply = (reply) => dispatch => (
-    CommentUtil.deleteReply(reply.id)
+    CommentUtil.deleteComment(reply.id)
         .then(reply => dispatch(removeReply(reply)))
 )
 
