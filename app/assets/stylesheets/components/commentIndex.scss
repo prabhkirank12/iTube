@@ -2,10 +2,9 @@ div #comment-container {
     display: flex;
     flex-direction: column;
     margin-bottom: 22px;
-    border: 3px solid rgb(233, 11, 48);
+    border: rgb(233, 11, 48);
 }
 
-div .comment-index-header {
-    border: 2px solid green;
-    color: white;
+.ccomment-index-container {
+    border: green;
 }

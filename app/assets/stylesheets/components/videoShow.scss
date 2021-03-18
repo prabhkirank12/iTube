@@ -109,7 +109,8 @@
 }
 
 hr{
-     color: #303030
+    background-color: #7A7A7A;
+    width: 800px;
 }
 
 .show-desc{
@@ -120,6 +121,11 @@ hr{
 }
 
 .comments-div-container {
-    margin-top: 53px;
-    border-top: #303030;
+    margin-top: 56px;
+}
+
+.comments-hr {
+    width: 800px;
+    margin-left: 30px;
+    background-color: #7A7A7A;
 }

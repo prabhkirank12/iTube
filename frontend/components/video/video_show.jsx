@@ -185,7 +185,7 @@ class VideoShow extends React.Component {
                             </p>
                         </div>
                         <div className="comments-div-container">
-                            {/* <hr /> */}
+                        <hr className="comments-hr"/>
                             <CommentIndexContainer video={this.props.video} />
                         </div>
 
