@@ -1,6 +1,7 @@
 import React from "react";
 import CommentFormContainer from "./comment_form_container";
 import CommentIndexItemContainer from "./comment_index_item_container";
+import * as MdIcons from 'react-icons/md';
 
 class CommentIndex extends React.Component {
     constructor(props){
@@ -60,11 +61,11 @@ class CommentIndex extends React.Component {
         })
 
         return (
-            <div id="comment-index-container">
-                <header id="comment-index-header">  
+            <div className="comment-index-container">
+                <header className="comment-index-header">  
                     {commentCount}
                     <div onClick={this.handleSortBy}>
-                        <i className="fas fa-sort-amount-up"></i>
+                        <MdIcons.MdSort />
                         <p>{sortBy}</p>
                     </div>
                 </header>

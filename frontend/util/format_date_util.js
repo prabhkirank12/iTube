@@ -9,23 +9,23 @@ export const timeSinceUpload = (dateString) => {
     let presentDate = new Date;
     let returnString = '';
     let num = 0;
-    if ((presentDate.getFullYear() - created_at.getFullYear()) > 0){
-        num = (presentDate.getFullYear() - created_at.getFullYear());
+    if ((presentDate.getFullYear() - uploadDate.getFullYear()) > 0){
+        num = (presentDate.getFullYear() - uploadDate.getFullYear());
         returnString = `${num} year`;
-    } else if ((presentDate.getMonth() - created_at.getMonth()) > 0 ){
-        num = (presentDate.getMonth() - created_at.getMonth());
+    } else if ((presentDate.getMonth() - uploadDate.getMonth()) > 0 ){
+        num = (presentDate.getMonth() - uploadDate.getMonth());
         returnString = `${num} month`;
-    } else if ((presentDate.getDate() - created_at.getDate()) > 0) {
-        num = (presentDate.getDate() - created_at.getDate());
+    } else if ((presentDate.getDate() - uploadDate.getDate()) > 0) {
+        num = (presentDate.getDate() - uploadDate.getDate());
         returnString = `${num} day`;
-    } else if ((presentDate.getHours() - created_at.getHours()) > 0) {
-        num = (presentDate.getHours() - created_at.getHours());
+    } else if ((presentDate.getHours() - uploadDate.getHours()) > 0) {
+        num = (presentDate.getHours() - uploadDate.getHours());
         returnString = `${num} hour`;
-    } else if ((presentDate.getMinutes() - created_at.getMinutes()) > 0) {
-        num = (presentDate.getMinutes() - created_at.getMinutes());
+    } else if ((presentDate.getMinutes() - uploadDate.getMinutes()) > 0) {
+        num = (presentDate.getMinutes() - uploadDate.getMinutes());
         returnString = `${num} minute`;
     } else{
-        num = (presentDate.getSeconds() - created_at.getSeconds());
+        num = (presentDate.getSeconds() - uploadDate.getSeconds());
         returnString = `${num} second`;
     }
 

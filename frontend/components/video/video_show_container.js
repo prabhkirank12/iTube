@@ -4,6 +4,7 @@ import { fetchVideo, fetchVideos, deleteVideo } from "../../actions/video_action
 import { fetchUser } from "../../actions/session_actions";
 import { openModal } from "../../actions/modal_actions"
 import { likeVideo, unlikeVideo, dislikeVideo, undislikeVideo, changeLikeVideo } from '../../actions/video_actions';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
     const video = state.entities.videos[ownProps.match.params.videoId];
@@ -32,4 +33,4 @@ const mapDispatchToProps = dispatch => ({
     openEditModal: () => dispatch(openModal('edit')),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(VideoShow)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(VideoShow));

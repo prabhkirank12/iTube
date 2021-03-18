@@ -159,7 +159,6 @@ class CommentForm extends React.Component {
                         {commenter}
                         <div>
                             <input type="text" className="inline-comment" onChange={this.handleInputChange} value={this.state.content} placeholder="Add a public comment..." required/>
-                            <div id="comment-input-underline"></div>
                         </div>
                     </div>
                     {bttnDiv}
