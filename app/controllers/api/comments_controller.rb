@@ -9,7 +9,7 @@ class Api::CommentsController < ApplicationController
             @comment.video_id = params[:video_id]
         else
             @comment.parent_comment_id = params[:comment_id]
-            parentComment = Comment.finnd(params[:comment_id])
+            parentComment = Comment.find(params[:comment_id])
             @comment.video_id = parentComment.video_id
         end
 
@@ -103,6 +103,6 @@ class Api::CommentsController < ApplicationController
 
     private
     def comment_params
-        params.require(:comment).permit(:body)
+        params.require(:comment).permit(:content, :video_id)
     end
 end

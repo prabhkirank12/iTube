@@ -23,11 +23,11 @@ class Comment < ApplicationRecord
     end
 
     def liker_ids
-        self.likes.where(is_like: 1).select(:liker_id).map {|el| el.liker_id}
+        self.likes.where(liked_value: 1).select(:liker_id).map {|el| el.liker_id}
     end
 
     def disliker_ids
-        self.likes.where(is_like: -1).select(:liker_id).map {|el| el.liker_id}
+        self.likes.where(liked_value: -1).select(:liker_id).map {|el| el.liker_id}
     end
 
 end
