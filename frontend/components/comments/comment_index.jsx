@@ -62,8 +62,8 @@ class CommentIndex extends React.Component {
 
         return (
             <div className="comment-index-container">
-                <header className="comment-index-header">  
-                    {commentCount className="comment-count"}
+                <header className="comment-index-header">
+                    {commentCount}   
                     <MdIcons.MdSort onClick={this.handleSortBy}/>
                     <p>{sortBy}</p>
                 </header>

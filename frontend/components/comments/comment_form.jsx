@@ -111,7 +111,7 @@ class CommentForm extends React.Component {
             let inputAction = '';
             if (this.props.currentUser) {
                 commenter = <Link to="/" className="commenter-icon">
-                    {this.props.currentUser.first_name.toUpperCase()}
+                    {this.props.currentUser.first_name[0].toUpperCase()}
                 </Link>
                 inputAction = this.showButtons;
             } else {
@@ -125,8 +125,8 @@ class CommentForm extends React.Component {
             let bttnDiv = '';
             if(this.state.active) {
                 bttnDiv = <div id="comment-bttn-div">
-                    <button type="button" onClick={this.hideButtons} id="comment-cancel-bttn">CANCEL</button>
                     <button type="button" onClick={this.handleSubmit} id={commentSubmitBttn}>COMMENT</button>
+                    <button type="button" onClick={this.hideButtons} id="comment-cancel-bttn">CANCEL</button>
                 </div>
             }
 
@@ -135,10 +135,11 @@ class CommentForm extends React.Component {
                     <div id="comment-input-icon">
                         {commenter}
                         <div>
-                            <input type="text" onClick={inputAction} onChange={this.handleInputChange} value={this.state.content} placeholder="Add a public comment..." required/>
+                            <input type="text" id="input-action" onClick={inputAction} onChange={this.handleInputChange} value={this.state.content} placeholder="Add a public comment..." required/>
                             <div id="comment-input-underline"></div>
                         </div>
                     </div>
+                    <hr />
                     {bttnDiv}
                 </div>
             )
@@ -149,8 +150,8 @@ class CommentForm extends React.Component {
             let buttonDiv = '';
             if (this.state.active) {
                  buttonDiv = <div id="comment-bttn-div" className="inline-comment-bttn">
-                    <button type="button" onClick={this.handleCancelEdit} id="comment-cancel-bttn">CANCEL</button>
                     <button type="button" onClick={this.handleSubmit} id={commentSubmitBttn}>COMMENT</button>
+                    <button type="button" onClick={this.handleCancelEdit} id="comment-cancel-bttn">CANCEL</button>
                 </div>
             }
             return (

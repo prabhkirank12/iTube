@@ -2,9 +2,51 @@ div #comment-container {
     display: flex;
     flex-direction: column;
     margin-bottom: 22px;
-    border: rgb(233, 11, 48);
+    border: 2px solid rgb(233, 11, 48);
+    width: 800px;
+    margin-left: -2px;
 }
 
-.ccomment-index-container {
-    border: green;
+.comment-index-container {
+    border: 2px solid green;
+    width: 800px;
+    margin-left: 30px;
+    height: 30px;
+    color: white;
+}
+
+.comment-index-header {
+    display: flex;
+    flex-direction: row;
+    color: white;
+}
+
+#comment-bttn-div {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#comment-bttn-div > #comment-submit-bttn {
+    background-color: #606060;
+    padding: 8px 12px 8px 12px;
+    margin-left: 8px;
+    border-radius: 2px;
+    color: black;
+}
+
+#comment-bttn-div > #comment-cancel-bttn {
+    color: #AAAAAA;
+}
+
+div > #input-action {
+    outline: none;
+    cursor: text;
+}
+
+#comment-input-icon input:focus {
+    outline: none;
+}
+
+.commenter-icon {
+    
 }
