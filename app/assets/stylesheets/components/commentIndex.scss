@@ -2,9 +2,9 @@ div #comment-container {
     display: flex;
     flex-direction: column;
     margin-bottom: 22px;
-    border: 2px solid rgb(233, 11, 48);
     width: 800px;
     margin-left: -2px;
+    margin-top: 15px;
 }
 
 .comment-index-container {
@@ -13,6 +13,8 @@ div #comment-container {
     margin-left: 30px;
     height: 30px;
     color: white;
+    margin-top: 20px;
+    margin-bottom: 25px;
 }
 
 .comment-index-header {
@@ -41,6 +43,10 @@ div #comment-container {
 div > #input-action {
     outline: none;
     cursor: text;
+    margin-top: 4px;
+    border: none;
+    margin-left: -360px;
+
 }
 
 #comment-input-icon input:focus {
@@ -48,5 +54,30 @@ div > #input-action {
 }
 
 .commenter-icon {
-    
+    background-color: #024C3F;
+    color: #E1EAE9;
+    font-size: 30px;
+    text-decoration: none;
+    display: flex;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    float: left;
+}
+
+.sort-icon {
+    cursor: pointer;
+    padding-left: 20px;
+    padding-right: 5px;
+    font-size: 30px;
+    color: #909090;
+    margin-top: -4px;
+}
+
+.sort-text {
+    font-size: 15px;
+    color: #909090;
 }
