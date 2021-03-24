@@ -21,7 +21,7 @@ class VideoShow extends React.Component {
 
     componentDidMount(){
         this.props.fetchVideo(this.props.match.params.videoId);
-        // this.props.fetchVideos();
+        this.props.fetchVideos();
     }
 
     componentDidUpdate(){
@@ -80,7 +80,7 @@ class VideoShow extends React.Component {
 
     //allows the uploader to delete their video
     handleDeleteVideo(){
-        this.props.removeVideo(this.props.video.id);
+        this.props.removeVideo(this.props.videoId);
         this.props.history.push('/');
     }
 
@@ -105,7 +105,9 @@ class VideoShow extends React.Component {
     }
 
     render() {
-        if(!this.props.video) return <> </>;
+        if(!this.props.video) {
+            return null;
+        } 
         //setting the like and dislike buttons
         let likeBttn = '';
         let dislikeBttn = '';
@@ -144,11 +146,11 @@ class VideoShow extends React.Component {
             </div>
         }
         if (this.props.video){
-            let videos = Object.values(this.props.videos).map(video => {
-                return (
-                    <VideoNext video={video} key={video.id} history={this.props.history} />
-                )
-            })
+            // let videos = Object.values(this.props.videos).map(video => {
+            //     return (
+            //         <VideoNext video={video} key={video.id} history={this.props.history} />
+            //     )
+            // })
             return (
                 <div>
                 <NavBar />
