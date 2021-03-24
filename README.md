@@ -1,10 +1,11 @@
-<img align="center" width="400" src="app/assets/images/icon.png" />
 
-<div align="center">
-  <a href="https://i-tube.herokuapp.com/#/">Live Site</a>
+<div>
+  <img align="left" width="150" src="app/assets/images/icon.png" />
+  <a align="right"href="https://i-tube.herokuapp.com/#/">Live Site</a>
+  <p>iTube, a pixel-perfect YouTube clone, is an online video-sharing platform. It allows users to view, create, and upload videos along with leave comments on other user's videos.</p>
 </div>
 
-<p>a pixel-perfect YouTube clone, is an online video-sharing platform. It allows users to view, create, and upload videos along with leave comments on other user's videos.</p>
+
 
 ![iTube.gif](./app/assets/images/itube-giphy.gif)
 
