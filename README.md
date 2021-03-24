@@ -29,7 +29,7 @@
 ## Main Features
   * Watch, upload and manage your video
   * Comment and edit your comments
-  * Like and dislike videos
+  * Like and dislike videos and comments
   * Search videos by keywords(i.e. Video's title & description)
 
 ## Challenges and Solutions 
