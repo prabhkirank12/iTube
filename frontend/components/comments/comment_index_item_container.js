@@ -9,7 +9,7 @@ import CommentIndexItem from "./comment_index_item";
 const mapStateToProps = (state, ownProps) => {
     return {
         commenter: state.entities.users[ownProps.comment.commenterId],
-        comment: ownProps.comment,
+        // comment: ownProps.comment,
         currentuserId: state.session.id,
         comments: state.entities.comments
     };

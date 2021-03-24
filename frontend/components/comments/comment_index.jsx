@@ -49,6 +49,7 @@ class CommentIndex extends React.Component {
 
         // displays all the comments and sorted by old or new
         let comments = Object.values(this.props.comments)
+        // debugger;
         let sortBy = 'SORT BY: Oldest';
 
         if(this.state.sortByNew) {

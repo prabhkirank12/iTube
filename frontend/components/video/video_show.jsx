@@ -20,8 +20,8 @@ class VideoShow extends React.Component {
     }
 
     componentDidMount(){
-        this.props.fetchVideo(this.props.video.id);
-        this.props.fetchVideos();
+        this.props.fetchVideo(this.props.match.params.videoId);
+        // this.props.fetchVideos();
     }
 
     componentDidUpdate(){
@@ -105,7 +105,7 @@ class VideoShow extends React.Component {
     }
 
     render() {
-
+        if(!this.props.video) return <> </>;
         //setting the like and dislike buttons
         let likeBttn = '';
         let dislikeBttn = '';

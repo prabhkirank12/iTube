@@ -8,7 +8,6 @@ div #comment-container {
 }
 
 .comment-index-container {
-    border: 2px solid green;
     width: 800px;
     margin-left: 30px;
     height: 30px;
@@ -75,9 +74,29 @@ div > #input-action {
     font-size: 30px;
     color: #909090;
     margin-top: -4px;
+    margin-left: 8px;
 }
 
 .sort-text {
     font-size: 15px;
     color: #909090;
+}
+
+.comment-item-container {
+    border: 2px solid green;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+}
+
+.commenter {
+    border: 1px solid black;
+}
+
+.comment-options-popup {
+    width: 200px;
+    border: 2px solid yellow;
+    display: flex;
+    justify-content: space-around;
 }

@@ -148,8 +148,9 @@ class CommentIndexItem extends React.Component {
                 return (
                     <div key={this.props.comment} className="comment-item-container">
                         <div>
+                            {/* The first_name is not passed in for the comments, map through it */}
                             <Link to="/" className="commenter">
-                                {this.props.commenter.first_name.toUpperCase()}
+                                {this.props.commenter.first_name}
                             </Link>
                             <EditCommentContainer comment={this.props.comment} />
                         </div>
@@ -160,12 +161,12 @@ class CommentIndexItem extends React.Component {
                     <div key={this.props.comment} className="comment-item-container">
                         <div>
                             <Link to="/" className="commenter">
-                                {this.props.commenter.first_name.toUpperCase()}
+                                {this.props.commenter.first_name} {this.props.commenter.last_name}
                             </Link>
                             <div>
                                 <Link to="/">{this.props.commenter.first_name} <span>{timeSinceUpload(this.props.comment.upploadDate)}</span> {edited} </Link>
                                 <p>{this.props.comment.content}</p>
-                                <div>
+                                <div className="likes-section">
                                     {likeBttn}
                                     {dislikeBttn}
                                     {/* reply bttn goes here */}
