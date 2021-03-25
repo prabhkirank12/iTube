@@ -125,3 +125,15 @@ div > #input-action {
 #comment-item-container button.like-selected {
     color: #3CA8FF;
 }
+
+#comment-item-container button.like-selected:active {
+    color: #3CA8FF;
+}
+
+.commenter-time {
+    border: 2px solid green;
+    width: 350px;
+    text-decoration: none;
+    color: white;
+}
+
