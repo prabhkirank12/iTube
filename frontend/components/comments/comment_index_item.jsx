@@ -4,6 +4,9 @@ import EditCommentContainer from "./edit_comment_container";
 import CommentFormContainer from "./comment_form_container";
 import { timeSinceUpload } from '../../util/format_date_util';
 import * as IoIcons from 'react-icons/io';
+import * as RiIcons from 'react-icons/ri';
+import * as BsIcons from 'react-icons/bs';
+
 // reply container
 
 class CommentIndexItem extends React.Component {
@@ -51,8 +54,8 @@ class CommentIndexItem extends React.Component {
     }
 
     handleLikeChange() {
-        let likeBttn = document.getElementById(`comment-like-bttn-${this.props.comment.id}`);
-        let dislikeBttn = document.getElementById(`comment-dislike-bttn-${this.props.comment.id}`);
+        let likeBttn = document.getElementById(`comment-like-bttn`);
+        let dislikeBttn = document.getElementById(`comment-dislike-bttn`);
         if (this.props.comment.likerIds.includes(this.props.currentuserId)) {
             likeBttn.classList.add("like-selected");
             dislikeBttn.classList.remove("like-selected");
@@ -103,9 +106,6 @@ class CommentIndexItem extends React.Component {
         }
     }
 
-    // handlePopup() {
-    //     let popup = document.getElementById
-    // }
 
     render() {
         if (!this.props.commenter) {
@@ -116,8 +116,8 @@ class CommentIndexItem extends React.Component {
             let commenterBttns = '';
             if (this.props.currentuserId === this.props.commenter.id) {
                 commenterBttns = <div className="comment-options-popup hide">
-                    <button onClick={this.handleEdit}><i className="fas fa-pencil-alt"></i>Edit</button>
-                    <button onClick={this.handleDelete}><i className="fas fa-trash"></i>Delete</button>
+                    <button onClick={this.handleEdit}><RiIcons.RiPencilFill />Edit</button>
+                    <button onClick={this.handleDelete}><IoIcons.IoMdTrash />Delete</button>
                 </div>
             } 
 
@@ -148,7 +148,6 @@ class CommentIndexItem extends React.Component {
                 return (
                     <div key={this.props.comment} className="comment-item-container">
                         <div>
-                            {/* The first_name is not passed in for the comments, map through it */}
                             <Link to="/" className="commenter">
                                 {this.props.commenter.first_name}
                             </Link>
@@ -161,11 +160,11 @@ class CommentIndexItem extends React.Component {
                     <div key={this.props.comment} className="comment-item-container">
                         <div>
                             <Link to="/" className="commenter">
-                                {this.props.commenter.first_name} {this.props.commenter.last_name}
+                                {this.props.commenter.first_name}
                             </Link>
                             <div>
-                                <Link to="/">{this.props.commenter.first_name} <span>{timeSinceUpload(this.props.comment.upploadDate)}</span> {edited} </Link>
-                                <p>{this.props.comment.content}</p>
+                                <Link className="commenter-time" to="/">{this.props.commenter.first_name} <span>{timeSinceUpload(this.props.comment.upploadDate)}</span> {edited} </Link>
+                                <p className="comment-content">{this.props.comment.content}</p>
                                 <div className="likes-section">
                                     {likeBttn}
                                     {dislikeBttn}

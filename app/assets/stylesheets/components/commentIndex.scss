@@ -83,6 +83,7 @@ div > #input-action {
 }
 
 .comment-item-container {
+    padding-top: 15px;
     border: 2px solid green;
     display: flex;
     flex-direction: column;
@@ -91,12 +92,36 @@ div > #input-action {
 }
 
 .commenter {
-    border: 1px solid black;
+    background-color: #024C3F;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    float: left;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
 }
 
 .comment-options-popup {
-    width: 200px;
-    border: 2px solid yellow;
+    width: 300px;
+    height: 30px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    > button {
+        background-color: #909090;
+        padding: 0px 14px 0px 14px;
+        border-radius: 2px;
+    }
+}
+
+.likes-section {
+    color: #909090;
+}
+
+#comment-item-container button.like-selected {
+    color: #3CA8FF;
 }
