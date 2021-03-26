@@ -163,11 +163,12 @@ class CommentIndexItem extends React.Component {
                                 {this.props.commenter.first_name}
                             </Link>
                             <div>
-                                <Link className="commenter-time" to="/">{this.props.commenter.first_name} <span>{timeSinceUpload(this.props.comment.upploadDate)}</span> {edited} </Link>
+                                <Link className="commenter-time" to="/">{this.props.commenter.first_name} <span className="time-span">{timeSinceUpload(this.props.comment.createdAt)}</span> {edited} </Link>
                                 <p className="comment-content">{this.props.comment.content}</p>
                                 <div className="likes-section">
                                     {likeBttn}
                                     {dislikeBttn}
+                                    Reply
                                     {/* reply bttn goes here */}
                                 </div>
                                 {/* reply section goes here */}
