@@ -42,3 +42,12 @@ export const deleteVideo = (videoId) => {
         url: `/api/videos/${videoId}`
     })
 }
+
+// Search Query Result 
+export const fetchSearchQuery = searchParams => {
+    return $.ajax({
+        method: 'GET',
+        url: `/api/videos${searchParams}`,
+        contentType: 'application/json'
+    })
+}

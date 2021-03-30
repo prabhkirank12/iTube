@@ -7,6 +7,14 @@ export const RECEIVE_ALL_VIDEOS = "RECEIVE_ALL_VIDEOS";
 export const REMOVE_VIDEO = "REMOVE_VIDEO";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 
+export const UPDATE_FILTER = "UPDATE_FILTER";
+
+const updateFilter = ({ videos, users }) => ({
+    type: UPDATE_FILTER,
+    videos,
+    users
+})
+
 const receiveLikedVideos = (videos) => {
     return{
         type: RECEIVE_LIKED_VIDEOS,
@@ -41,6 +49,11 @@ const removeVideo = (videoId) => {
         videoId
     }
 }
+
+export const fetchSearchQuery = searchQuery => dispatch => (
+    VideoUtil.fetchSearchQuery(searchQuery)
+        .then(filter => dispatch(updateFilter(filter)))
+)
 
 export const fetchVideo = videoId => dispatch => (
     VideoUtil.fetchVideo(videoId)

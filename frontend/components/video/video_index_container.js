@@ -1,15 +1,16 @@
 import { connect } from 'react-redux';
 import VideoIndex from "./video_index";
-import { fetchVideos } from "../../actions/video_actions";
+import { fetchVideos, fetchSearchQuery } from "../../actions/video_actions";
 
 const mapStateToProps = state => {
     return{
-        videos: Object.values(state.entities.videos)
+        videos: Object.values(state.entities.videos),
     }
 }
 
 const mapDispatchToProps = dispatch => ({
-    allVideos: () => dispatch(fetchVideos())
+    allVideos: () => dispatch(fetchVideos()),
+    fetchSearchQuery: searchQuery => dispatch(fetchSearchQuery(searchQuery))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(VideoIndex)
