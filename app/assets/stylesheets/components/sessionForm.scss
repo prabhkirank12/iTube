@@ -137,6 +137,22 @@ span{
     text-decoration: none;
 }
 
+.error {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.signupErrors {
+    color: red;
+    margin-top: 10px;
+}
+
+input:focus {
+   border: 2px solid red; 
+}
+
 input:focus {
     border: 2px solid #055fd4;
     border-radius: 4px;

@@ -34,10 +34,18 @@ class SessionForm extends React.Component {
         this.props.processForm(user);
     }
 
-    renderErrors(field) {
+    renderErrors() {
         const { errors, match } = this.props;
         const error = errors[0];
-        console.log(error);
+        const errorClass = (this.props.formType === 'login') ?  'error' : 'signupErrors';
+        return (
+            <>
+                <ul className={errorClass}>
+                    {error}
+                </ul>
+            </>
+        )
+        
     }
 
     buttonText() {
@@ -87,9 +95,9 @@ class SessionForm extends React.Component {
         const fullSignup = (this.props.formType === 'signup') ? (
                 <>
                     {/* <label htmlFor="fname" className="Name"> First Name</label> */}
-                    <input id="fname" type="text" value={this.state.first_name} onChange={this.update('first_name')} placeholder="First Name"/>
+                    <input id="fname" type="text" value={this.state.first_name} onChange={this.update('first_name')} placeholder="First Name" />
                     {/* <label htmlFor="lname" className="Name"> Last Name</label> */}
-                    <input id="lname" type="text" value={this.state.last_name} onChange={this.update('last_name')}  placeholder="Last Name"/>
+                    <input id="lname" type="text" value={this.state.last_name} onChange={this.update('last_name')}  placeholder="Last Name" />
                     <br />
                     <br /> 
                 </>
@@ -101,10 +109,11 @@ class SessionForm extends React.Component {
                     {this.titleText()}
                     {this.titleCaption()}
                     {this.renderErrors()}
+                    
                     <div className={this.props.formType === 'login' ? "login-div" : "signup-div"} >
                         <br />
                         { fullSignup }
-                        <input id="email" type="text" value={this.state.email} onChange={this.update('email')} placeholder="Email"/>
+                        <input id='email' type="text" value={this.state.email} onChange={this.update('email')} placeholder="Email" />
                         {/* <label htmlFor="email" className="email" >Email</label> */}
                         <br />
                         <br />
