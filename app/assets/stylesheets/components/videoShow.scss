@@ -90,10 +90,11 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    width: 105px;
-    margin-left: 1100px;
-    height: 100px;
-    margin-top: -530px;
+    width: 205px;
+    margin-left: 1000px;
+    height: 600px;
+    margin-top: -620px;
+    border: 2px solid violet;
 }
 
 .side-video-title{
@@ -106,6 +107,7 @@
     text-align: center;
     margin-bottom: 5px;
     border: 1px solid #909090;
+    border: 2px solid yellow;
 }
 
 hr{

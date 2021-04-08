@@ -11,13 +11,14 @@ class CommentForm extends React.Component {
         };
 
         this.handleEnterEdit = this.handleEnterEdit.bind(this);
-        this.redirectToLogin = this.redirectToLogin.bind(this);
+        this.handleRedirectToLogin = this.handleRedirectToLogin.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleLeaveEdit = this.handleLeaveEdit.bind(this);
         this.hideButtons = this.hideButtons.bind(this);
         this.showButtons = this.showButtons.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleCancelEdit = this.handleCancelEdit.bind(this);
+        this.handleLogIn = this.handleLogIn.bind(this);
     }
 
     componentDidMount() {
@@ -25,8 +26,8 @@ class CommentForm extends React.Component {
     }
 
 
-    redirectToLogin() {
-        this.props.history.push("/login");
+    handleRedirectToLogin() {
+        this.props.history.push('/login');
     }
 
     handleEnterEdit() {
@@ -50,7 +51,7 @@ class CommentForm extends React.Component {
             this.setState({
                 content: ''
             });
-            document.getElementById(`reply-comment-${this.props.parentId}`).classList.remove("show");
+            document.getElementById('reply-comment-form').classList.remove("show");
         }
     }
 
@@ -85,6 +86,10 @@ class CommentForm extends React.Component {
         this.setState({ content: e.target.value });
     }
 
+    handleLogIn() {
+        <Link to="/login"></Link>
+    }
+
     render() {
         if (this.props.formType === 'create') {
             let commenter = '';
@@ -96,19 +101,21 @@ class CommentForm extends React.Component {
                 inputAction = this.showButtons;
             } else {
                 commenter= <Link to="/login" className="commenter-icon"></Link>
-                inputAction = this.redirectToLogin;
+                inputAction = <Link to="/login" className="LogIn">Please Log In</Link>
             }
-
-            let commentSubmitBttn = "comment-submit-bttn";
-            if (this.props.parentId) commentSubmitBttn = `comment-submit-bttn-${this.props.parentId}`;
 
             let bttnDiv = '';
             if(this.state.active) {
                 bttnDiv = <div id="comment-bttn-div">
-                    <button type="button" onClick={this.handleSubmit} id={commentSubmitBttn}>COMMENT</button>
+                    <button type="button" onClick={this.handleSubmit} id='comment-submit-bttn'>COMMENT</button>
                     <button type="button" onClick={this.hideButtons} id="comment-cancel-bttn">CANCEL</button>
                 </div>
             }
+            // } else {
+            //      bttnDiv = <div id="comment-bttn-div">
+            //         <Link to="/login" className="LogIn">Please Log In</Link>
+            //     </div>
+            // }
 
             return (
                 <div id="comment-container">

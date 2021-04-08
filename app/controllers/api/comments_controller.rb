@@ -23,11 +23,11 @@ class Api::CommentsController < ApplicationController
 
     def index
         if params[:video_id]
-            @comments = Comment.where(video_id: params[:video_id]).includes(:commenter)
-        elsif params[:comment_id]
-            @comments = Comment.where(parent_comment_id: params[:comment_id]).includes(:commenter)
+            main_comments = Video.find(params[:video_id]).comments
+            @comments = main_comments
+            main_comments.each{ |comment| @comments.concat(comment.replies)}
         else
-            @comments = Comment.all
+            @comments = Comment.find(params[:comment_id]).replies
         end
         render :index
     end
@@ -41,11 +41,14 @@ class Api::CommentsController < ApplicationController
 
     def update
         @comment = Comment.find(params[:id])
-        if @comment && current_user.id == @comment.commenter_id
-            @comment.update(comment_params)
-            render :show
+        if @comment.content != comment_params[:content]
+            if @comment.update(comment_params)
+                render :show
+            else
+                render json: @comment.errors.full_messages, status: 422
+            end
         else
-            render json: @comment.errors.full_messages, status: 422
+           render :show
         end
     end
 

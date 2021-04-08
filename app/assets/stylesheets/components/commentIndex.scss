@@ -7,6 +7,16 @@ div #comment-container {
     margin-top: 15px;
 }
 
+.LogIn {
+    text-decoration: none;
+    margin-bottom: 10px;
+    color: black;
+    padding: 7px;
+    border: 1px solid lightgray;
+    border-radius: 2px;
+    background-color: lightgray;
+}
+
 .comment-index-container {
     width: 800px;
     margin-left: 30px;
@@ -123,11 +133,11 @@ div > #input-action {
     color: #909090;
 }
 
-#comment-item-container button.like-selected {
+#comment-index-container button.like-selected {
     color: #3CA8FF;
 }
 
-#comment-item-container button.like-selected:active {
+.likes-section button:active {
     color: #3CA8FF;
 }
 

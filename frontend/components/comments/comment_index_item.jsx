@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import EditCommentContainer from "./edit_comment_container";
 import CommentFormContainer from "./comment_form_container";
 import { timeSinceUpload } from '../../util/format_date_util';
+import RepliesContainer from './replies_container';
 import * as IoIcons from 'react-icons/io';
 import * as RiIcons from 'react-icons/ri';
 import * as BsIcons from 'react-icons/bs';
@@ -92,6 +93,10 @@ class CommentIndexItem extends React.Component {
         this.props.changeLikeComment(this.props.comment.id);
     }
 
+    handleOpenReplyForm() {
+        document.getElementById('reply-comment-form').classList.add("show");
+    }
+
     handleEdit() {
         this.setState({
             editMode: true,
@@ -127,7 +132,7 @@ class CommentIndexItem extends React.Component {
                 edited = <p>(edited)</p>
             }
 
-            // like and dislike button for the commennts
+            // like and dislike button for the comments
             let likeBttn = '';
             let dislikeBttn = '';
             if (!this.props.currentuserId) {
@@ -143,6 +148,23 @@ class CommentIndexItem extends React.Component {
                 likeBttn = <button onClick={this.handleLikeComment} className="comment-like-bttn"><IoIcons.IoMdThumbsUp /><p>{this.props.comment.likerIds.length}</p></button>
                 dislikeBttn = <button onClick={this.handleDislikeComment} className="comment-dislike-bttn"><IoIcons.IoMdThumbsDown /></button>
             }
+
+            // Reply Section
+            let replies = '';
+            if (this.props.comment.repliesIds.length > 0) replies = <RepliesContainer parent={this.props.comment} />
+
+            let replySection = '';
+            let replyBttn = '';
+            if (this.props.comment.parentId === null) {
+                replySection = <>
+                                <div id='reply-comment-form' className='reply-comment-form'>
+                                    <CommentFormContainer handleUpdateAfterReply={this.handleUpdateAfterReply} parentId={this.props.comment.id}/> 
+                                </div>
+                                {replies}
+                            </>
+                replyBttn = <button id='reply-bttn' onClick={this.handleOpenReplyForm}>REPLY</button>
+            } 
+
 
             if (this.state.editMode) {
                 return (
@@ -162,16 +184,15 @@ class CommentIndexItem extends React.Component {
                             <Link to="/" className="commenter">
                                 {this.props.commenter.first_name}
                             </Link>
-                            <div>
+                            <div id="comment-details">
                                 <Link className="commenter-time" to="/">{this.props.commenter.first_name} <span className="time-span">{timeSinceUpload(this.props.comment.createdAt)}</span> {edited} </Link>
                                 <p className="comment-content">{this.props.comment.content}</p>
                                 <div className="likes-section">
                                     {likeBttn}
                                     {dislikeBttn}
-                                    Reply
-                                    {/* reply bttn goes here */}
+                                    {replyBttn}
                                 </div>
-                                {/* reply section goes here */}
+                                {replySection}
                             </div>
                         </div>
                         {commenterBttns}

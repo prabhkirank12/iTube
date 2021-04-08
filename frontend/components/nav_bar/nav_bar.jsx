@@ -58,10 +58,8 @@ class NavBar extends React.Component{
 
                         <Dropdown.Menu id="dropdown-items">
                             {/* <CgIcons.CgProfile className="profileIcon" /> */}
-                            <Dropdown.Item className="dropdownItem"> <CgIcons.CgProfile className="profileIcon" /> {this.props.currentUser.first_name} </Dropdown.Item>
+                            <Dropdown.Item className="dropdownItem"> <CgIcons.CgProfile className="profileIcon" /> <div className="profile-name"> {this.props.currentUser.first_name} {this.props.currentUser.email}</div> </Dropdown.Item>
                             <br />
-                            <Dropdown.Item className="dropdownItem"> {this.props.currentUser.email}</Dropdown.Item>
-                            <hr className="dropdownBreak" size="1"/>
                             <Dropdown.Item onClick={this.props.logout} className="logOutItem"> <RiIcons.RiLogoutBoxRLine className="logOutIcon" /> Sign Out</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>

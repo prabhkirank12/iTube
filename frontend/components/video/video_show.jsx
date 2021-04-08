@@ -3,7 +3,7 @@ import { Link, withRouter} from 'react-router-dom';
 import * as IoIcons from 'react-icons/io';
 import NavBar from '../../components/nav_bar/nav_bar_container';
 import { formatDate } from '../../util/format_date_util';
-// import VideoNext from './video_next';
+import VideoNext from './video_next';
 import CommentIndexContainer  from '../comments/comment_index_container';
 class VideoShow extends React.Component {
     constructor(props){
@@ -146,11 +146,11 @@ class VideoShow extends React.Component {
             </div>
         }
         if (this.props.video){
-            // let videos = Object.values(this.props.videos).map(video => {
-            //     return (
-            //         <VideoNext video={video} key={video.id} history={this.props.history} />
-            //     )
-            // })
+            let videos = Object.values(this.props.videos).map(video => {
+                return (
+                    <VideoNext video={video} key={video.id} history={this.props.history} />
+                )
+            })
             return (
                 <div>
                 <NavBar />
@@ -194,7 +194,9 @@ class VideoShow extends React.Component {
                    </div>
 
                    {/* <div className="all-videos">
-                        {videos}
+                       <div>
+                            {videos}
+                       </div>
                    </div> */}
                </div>   
            )

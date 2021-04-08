@@ -175,8 +175,8 @@ span{
 #dropdown-items {
     background-color: #222222;
     display: block;
-    width: 300px;
-    height: 150px;
+    width: 200px;
+    height: 110px;
     text-align: left;
     margin-left: 20px;
     text-decoration: none;
@@ -186,17 +186,20 @@ span{
     color: white;
     text-decoration: none;
     display: flex;
-    justify-content: space-evenly;
+    margin-top: 10px;
+    padding: 5px;
 }
 
 .profileIcon {
     font-size: 40px;
     color: #044C3F;
-    // top: -50px;
-    // margin-top: 15px;
     margin-left: 20px;
+    margin-right: 10px;
 }
 
+.profile-name {
+    margin-top: 5px;
+}
 .logOutItem  {
     text-decoration: none;
     color: white;
