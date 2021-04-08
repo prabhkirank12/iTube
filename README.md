@@ -13,13 +13,10 @@
 #
 1. [Technologies](#technologies)
 2. [Main Features](#main-features)
-3. [Challenges & Solutions](#challenges-and-solutions)
-4. [Future Features](#future-features)
+3. [Future Features](#future-features)
 
 
 ## Technologies 
-#
-
 ### This fullstack application was built using the following technologies:
 
 * Backend: Ruby, Rails, PostgreSQL
@@ -32,9 +29,7 @@
   * Like and dislike videos and comments
   * Search videos by keywords(i.e. Video's title & description)
 
-## Challenges and Solutions 
-
-
-
 ## Future Features
-
+  * Views
+   - Each video will have a number to represent how many times it was viewed.
+   - Every view will count regardless of user being logged in or not.
