@@ -80,7 +80,7 @@ class VideoShow extends React.Component {
 
     //allows the uploader to delete their video
     handleDeleteVideo(){
-        this.props.removeVideo(this.props.videoId);
+        this.props.removeVideo(this.props.video.id);
         this.props.history.push('/');
     }
 
