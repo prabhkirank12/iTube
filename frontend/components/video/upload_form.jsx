@@ -60,7 +60,7 @@ class UploadForm extends React.Component {
             video = {
                 id: currentVideoId,
                 title: this.state.title,
-                body: this.state.body
+                description: this.state.description
             };
             this.props.processForm(video);
         } else {
@@ -83,7 +83,7 @@ class UploadForm extends React.Component {
         let url = this.props.location.pathname.split('/');
         let currentVideoId = url.pop();
         let currentVideo = this.props.videos[currentVideoId];
-        this.setState({ title: currentVideo.title, body: currentVideo.body, videoUrl: currentVideo.videoUrl})
+        this.setState({ title: currentVideo.title, description: currentVideo.description, videoUrl: currentVideo.videoUrl})
     }
     
     handleDragOver(e) {

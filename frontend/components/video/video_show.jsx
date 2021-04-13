@@ -175,8 +175,8 @@ class VideoShow extends React.Component {
                             </p>
                             {likeBttn}
                             {dislikeBttn}
-                            {editDeleteBttn}
                             <button> <IoIcons.IoIosShareAlt /> Share </button>
+                            {editDeleteBttn}
                         </div>
 
                         <div className="video-desc-show">

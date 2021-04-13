@@ -23,6 +23,11 @@
     border-color: #3DA7FF;
 }
 
+#video-options-bttns {
+    display: flex;
+    flex-direction: column;
+}
+
 #like-dislike-bar-container {
     position: absolute;
     top: 26px;
