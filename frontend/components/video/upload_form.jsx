@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import * as MdIcons from "react-icons/md";
 import * as IoIcons from "react-icons/io";
 

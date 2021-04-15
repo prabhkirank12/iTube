@@ -1,6 +1,5 @@
 //The navigation bar
 import React from 'react';
-import { Redirect } from 'react-router';
 import { Dropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import * as FaIcons from "react-icons/fa";
@@ -8,7 +7,8 @@ import * as BsIcons from "react-icons/bs";
 import * as CgIcons from "react-icons/cg";
 import * as AiIcons from "react-icons/ai";
 import * as RiIcons from "react-icons/ri";
-import { SidebarData } from "../side_bar/side_bar_data"
+import { SidebarData } from "../side_bar/side_bar_data";
+import SearchBar from './search';
 
 class NavBar extends React.Component{
     constructor(props){
@@ -98,7 +98,9 @@ class NavBar extends React.Component{
                         <Link className="logo" to="/"><img src={window.logoUrl} alt="logo" /></Link>
                     </div>
                     <div className="center-navbar">
-                        <input type="text" className="search-bar" placeholder="Search" />
+                        {/* Search Component here.. */}
+                        <SearchBar />
+                        {/* <input type="text" className="search-bar" placeholder="Search" /> */}
                         <AiIcons.AiOutlineSearch className="search-icon"/>
                     </div>
                     <div className="right-navbar">
@@ -121,7 +123,7 @@ class NavBar extends React.Component{
                                 )
                             })
                         }
-                        <hr />
+                        {/* <hr /> */}
                         {sideBarSignin}
                     </ul>
                 </nav>

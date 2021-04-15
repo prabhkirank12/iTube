@@ -58,9 +58,11 @@ class CommentIndex extends React.Component {
         //     sortBy = 'SORT BY: Newest'
         // }
 
-        comments = comments.map(comment => {
-           if (comment.parentId === null) return <CommentIndexItemContainer key={comment.id} repliesIds={comment.repliesIds} comment={comment} />
-        })
+        // comments = comments.map(comment => {
+        //    if (comment.parentId === null) return <CommentIndexItemContainer key={comment.id} repliesIds={comment.repliesIds} comment={comment} />
+        // })
+
+        // console.log(comments);
 
         return (
             <div className="comment-index-container">
@@ -71,7 +73,10 @@ class CommentIndex extends React.Component {
                 </header>
                 <CommentFormContainer videoId={this.props.video.id} />
                 <div id="comment-index-items-container">
-                    {comments}
+                    {comments.map(comment => {
+                        if (comment.parentId === null) return <CommentIndexItemContainer key={comment.id} repliesIds={comment.repliesIds} comment={comment} />
+                        })
+                    }
                 </div>
             </div>
         )

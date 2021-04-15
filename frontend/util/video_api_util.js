@@ -42,3 +42,19 @@ export const deleteVideo = (videoId) => {
         url: `/api/videos/${videoId}`
     })
 }
+
+
+// query video
+const queryVideoAjax = (query) => {
+    return $.ajax({
+        method: 'GET',
+        url: `/api/videos?query_string=${query}`
+    })
+}
+
+//takes in setState and return a function to make an ajax query and then it will update the internal state of the component, this doesn't require changes to redux state.
+export const queryVideoCreator = (setState) => (query) => {
+    queryVideoAjax(query).then(videos => {
+        setState({videos})
+    })
+}

@@ -15,8 +15,8 @@ class Api::VideosController < ApplicationController
     end
 
     def index
-        if params[:search_query]
-            @videos = Video.query_videos(params[:search_query])
+        if params[:query]
+            @videos = Video.search_video(params[:query])
         elsif params[:userId]
             @videos = User.find_by(id: parmas[:userId]).video
         else

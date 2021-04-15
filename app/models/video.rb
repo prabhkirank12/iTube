@@ -20,4 +20,11 @@ class Video < ApplicationRecord
     def dislikers
         self.likes.where(liked_value: -1).select(:liker_id).map{|ele| ele.liker_id}  
     end
+
+    # performs a case in-sensitive search for title
+    def self.search_video(query)
+        allVideos = Video.joins(:uploader).where("title ILIKE '%#{query}%' ").group(:id)
+        allVideos
+    end
+
 end
