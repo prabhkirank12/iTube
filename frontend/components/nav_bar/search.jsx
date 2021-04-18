@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from "lodash";
 import { queryVideoCreator } from '../../util/video_api_util';
 // form for the search bar
 // add onChange, debounce it
@@ -32,7 +33,7 @@ class SearchBar extends React.Component {
     render(){
         return (
             <form>
-                <input type="text" className="search-bar" placeholder="Search"  onChange={this.handleChange}/>
+                <input type="text" className="search-bar" placeholder="Search"  onChange={_.debounce(this.handleChange, 300)}/>
                 {/* If this.state.videos === '' then return null Search dropdown component pass prop this.state.videos, show ul list with video titles add (Link) */}
             </form>
         )
