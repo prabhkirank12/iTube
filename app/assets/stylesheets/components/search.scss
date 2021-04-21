@@ -1,5 +1,10 @@
 .search {
     width: 575px;
     margin: 0 auto;
-    border: none;
+}
+
+form > input[type=text]:focus{
+    width: 94%;
+    border: 1px solid #1A63B9;
+    border-radius: 0;
 }
