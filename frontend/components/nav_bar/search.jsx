@@ -12,10 +12,10 @@ class SearchBar extends React.Component {
             video: '',
             queryString: ''         
         };
+        this.setState = this.setState.bind(this);
         this.queryVideo = queryVideoCreator(this.setState);
         this.handleChange = this.handleChange.bind(this);
         this.sendQuery = this.sendQuery.bind(this);
-        this.setState = this.setState.bind(this);
     }
 
     //takes in the event, to get the value

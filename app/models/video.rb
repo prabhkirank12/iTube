@@ -24,6 +24,7 @@ class Video < ApplicationRecord
     # performs a case in-sensitive search for title
     def self.search_video(query)
         allVideos = Video.joins(:uploader).where("title ILIKE '%#{query}%' ").group(:id)
+        debugger
         allVideos
     end
 
