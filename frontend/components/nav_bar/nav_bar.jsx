@@ -98,9 +98,7 @@ class NavBar extends React.Component{
                         <Link className="logo" to="/"><img src={window.logoUrl} alt="logo" /></Link>
                     </div>
                     <div className="center-navbar">
-                        {/* Search Component here.. */}
                         <SearchBar />
-                        {/* <input type="text" className="search-bar" placeholder="Search" /> */}
                         <AiIcons.AiOutlineSearch className="search-icon"/>
                     </div>
                     <div className="right-navbar">

@@ -23,6 +23,7 @@
     align-items: center;
     width: 40%;
     margin-bottom: 0px;
+    border: none;
 }
 
 .center-navbar > input{
@@ -54,6 +55,8 @@
 .search-bar {
     text-align: left;
     background-color: #131313;
+    width: 94%;
+    height: 5px;
 }
 
 .right-navbar{
