@@ -32,7 +32,7 @@ class CommentIndexItem extends React.Component {
     }
 
     componentDidMount() {
-        if (!this.props.commenter) this.props.fetchUser(this.props.comment.commenterId);
+        this.props.fetchUser(this.props.comment.commenterId);
         // this.handlePopup = this.hanndlePopup.bind(this);
         if(document.getElementById(`comment-like-bttn-${this.props.comment.id}`) && document.getElementById(`comment-dislike-bttnn-${this.props.comment.id}`)) {
             this.handleLikeChange();
