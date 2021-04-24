@@ -51,12 +51,12 @@ class CommentIndex extends React.Component {
         let comments = Object.values(this.props.comments);
 
         // debugger;
-        // let sortBy = 'SORT BY: Oldest';
+        let sortBy = 'SORT BY: Oldest';
 
-        // if(this.state.sortByNew) {
-        //     comments = Object.values(this.props.comments).reverse();
-        //     sortBy = 'SORT BY: Newest'
-        // }
+        if(this.state.sortByNew) {
+            comments = Object.values(this.props.comments).reverse();
+            sortBy = 'SORT BY: Newest'
+        }
 
         let commentsEl = comments.map(comment => {
            if (comment.parentId === null) return <CommentIndexItemContainer key={comment.id} repliesIds={comment.repliesIds} comment={comment} />

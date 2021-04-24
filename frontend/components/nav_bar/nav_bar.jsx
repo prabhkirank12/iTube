@@ -98,7 +98,7 @@ class NavBar extends React.Component{
                         <Link className="logo" to="/"><img src={window.logoUrl} alt="logo" /></Link>
                     </div>
                     <div className="center-navbar">
-                        <SearchBar />
+                        <SearchBar history={this.props.history}/>
                         <AiIcons.AiOutlineSearch className="search-icon"/>
                     </div>
                     <div className="right-navbar">

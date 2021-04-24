@@ -16,6 +16,12 @@ class SearchBar extends React.Component {
         this.queryVideo = queryVideoCreator(this.setState);
         this.handleChange = this.handleChange.bind(this);
         this.sendQuery = this.sendQuery.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    sendQuery() {
+        // debounce it here
+        this.queryVideo(this.state.queryString);
     }
 
     //takes in the event, to get the value
@@ -25,14 +31,14 @@ class SearchBar extends React.Component {
         this.sendQuery();
     }
 
-    sendQuery() {
-        // debounce it here
-        this.queryVideo(this.state.queryString);
+    handleSubmit(e) {
+        e.preventDefault();
+        this.props.history.push(`/results?query_string=${this.state.queryString}`);
     }
 
     render(){
         return (
-            <form className="search" >
+            <form className="search" onSubmit={this.handleSubmit}>
                 <input type="text" className="search-bar" placeholder="Search"  onChange={_.debounce(this.handleChange, 300)}/>
                 {/* If this.state.videos === '' then return null Search dropdown component pass prop this.state.videos, show ul list with video titles add (Link) */}
             </form>

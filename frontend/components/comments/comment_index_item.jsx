@@ -6,7 +6,6 @@ import { timeSinceUpload } from '../../util/format_date_util';
 import RepliesContainer from './replies_container';
 import * as IoIcons from 'react-icons/io';
 import * as RiIcons from 'react-icons/ri';
-import * as BsIcons from 'react-icons/bs';
 
 // reply container
 
@@ -20,7 +19,6 @@ class CommentIndexItem extends React.Component {
 
         this.handleLikeChange = this.handleLikeChange.bind(this);
         this.handleRedirectToLogin = this.handleRedirectToLogin.bind(this);
-        // this.handlePopup = this.handlePopup.bind(this);
         this.handleLikeComment = this.handleLikeComment.bind(this);
         this.handleDislikeComment = this.handleDislikeComment.bind(this);
         this.handleUnlikeComment = this.handleUnlikeComment.bind(this);
@@ -33,8 +31,7 @@ class CommentIndexItem extends React.Component {
 
     componentDidMount() {
         this.props.fetchUser(this.props.comment.commenterId);
-        // this.handlePopup = this.hanndlePopup.bind(this);
-        if(document.getElementById(`comment-like-bttn-${this.props.comment.id}`) && document.getElementById(`comment-dislike-bttnn-${this.props.comment.id}`)) {
+        if(document.getElementById(`comment-like-bttn`) && document.getElementById(`comment-dislike-bttn`)) {
             this.handleLikeChange();
         }
     }
@@ -49,9 +46,13 @@ class CommentIndexItem extends React.Component {
                 }
             }
         }
-        if (document.getElementById(`comment-like-bttn-${this.props.comment.id}`) && document.getElementById(`comment-dislike-bttnn-${this.props.comment.id}`)) {
+        if (document.getElementById(`comment-like-bttn`) && document.getElementById(`comment-dislike-bttn`)) {
             this.handleLikeChange();
         }
+    }
+
+    handleRedirectToLogin(){
+        <Link to="/login"></Link>
     }
 
     handleLikeChange() {
@@ -67,10 +68,6 @@ class CommentIndexItem extends React.Component {
             likeBttn.classList.remove("like-selected");
             dislikeBttn.classList.remove("like-selected");
         }
-    }
-
-    handleRedirectToLogin(){
-        this.props.history.push('/login');
     }
 
     handleLikeComment() {
