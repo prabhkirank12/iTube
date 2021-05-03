@@ -154,44 +154,46 @@ class VideoShow extends React.Component {
             return (
                 <div>
                 <NavBar />
-                    <div className="video-show">
-                        <video width="800" height="400" autoPlay controls className="video-display">
-                            <source src={this.props.video.videoUrl} type="video/mp4" />
-                        </video>
+                    <div id="current-video-content">
+                        <div className="video-show">
+                            <video width="800" height="400" autoPlay controls className="video-display">
+                                <source src={this.props.video.videoUrl} type="video/mp4" />
+                            </video>
 
-                    </div>
-                   <div className="video-content-show">
-                       <div className="video-title-show">
-                           {this.props.video.title}
-                       </div>
-
-                        <div id="video-show-buttons">
-                            <div id="like-dislike-bar-container">
-                                <div id="like-bar" style={likeBarStyle}></div>
-                                <div id="dislike-bar" style={dislikeBarStyle}></div>
+                        </div>
+                        <div className="video-content-show">
+                            <div className="video-title-show">
+                                {this.props.video.title}
                             </div>
-                            <p>
-                                {formatDate(this.props.video.created_at)}
-                            </p>
-                            {likeBttn}
-                            {dislikeBttn}
-                            <button> <IoIcons.IoIosShareAlt /> Share </button>
-                            {editDeleteBttn}
-                        </div>
 
-                        <div className="video-desc-show">
-                            <hr />
-                            <button className="logo-icon"></button>
-                            <p className="show-desc">
-                                {this.props.video.description}
-                            </p>
-                        </div>
-                        <div className="comments-div-container">
-                        <hr className="comments-hr"/>
-                            <CommentIndexContainer video={this.props.video} />
-                        </div>
+                            <div id="video-show-buttons">
+                                <div id="like-dislike-bar-container">
+                                    <div id="like-bar" style={likeBarStyle}></div>
+                                    <div id="dislike-bar" style={dislikeBarStyle}></div>
+                                </div>
+                                <p>
+                                    {formatDate(this.props.video.created_at)}
+                                </p>
+                                {likeBttn}
+                                {dislikeBttn}
+                                <button> <IoIcons.IoIosShareAlt /> Share </button>
+                                {editDeleteBttn}
+                            </div>
 
-                   </div>
+                            <div className="video-desc-show">
+                                <hr />
+                                <button className="logo-icon"></button>
+                                <p className="show-desc">
+                                    {this.props.video.description}
+                                </p>
+                            </div>
+                            <div className="comments-div-container">
+                            <hr className="comments-hr"/>
+                                <CommentIndexContainer video={this.props.video} />
+                            </div>
+
+                        </div>
+                    </div>
 
                    <div className="all-videos">
                         {videos}

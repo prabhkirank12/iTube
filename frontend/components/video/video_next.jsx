@@ -20,10 +20,10 @@ class VideoNext extends React.Component {
             return (
                 <Link to={videoShowUrl} id="next-video-container">
                     <video src={this.props.video.videoUrl} muted></video>
-                    <div>
-                        <p>{this.props.video.title}</p>
-                        <p>{uploader.first_name}</p>
-                        <p>{timeSinceUpload(this.props.video.created_at)}</p>
+                    <div id="vidoe-next-content">
+                        <p id="video-next-title">{this.props.video.title}</p>
+                        <p id="video-next-uploader">{uploader.first_name}</p>
+                        <p id="video-next-time">{timeSinceUpload(this.props.video.created_at)}</p>
                     </div>
                 </Link>
             )
