@@ -23,7 +23,7 @@ class VideoNext extends React.Component {
                     <div>
                         <p>{this.props.video.title}</p>
                         <p>{uploader.first_name}</p>
-                        <p>{timeSinceUpload(this.props.video.uploadDate)}</p>
+                        <p>{timeSinceUpload(this.props.video.created_at)}</p>
                     </div>
                 </Link>
             )
