@@ -148,7 +148,7 @@ class VideoShow extends React.Component {
         if (this.props.video){
             let videos = Object.values(this.props.videos).map(video => {
                 return (
-                    <VideoNext video={video} key={video.id} history={this.props.history} />
+                    <VideoNext video={video} key={video.id} fetchUser={this.props.fetchUser} users={this.props.users} history={this.props.history} />
                 )
             })
             return (
@@ -194,9 +194,7 @@ class VideoShow extends React.Component {
                    </div>
 
                    <div className="all-videos">
-                       <div>
-                            {videos}
-                       </div>
+                        {videos}
                    </div>
                </div>   
            )
